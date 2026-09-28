@@ -9,7 +9,7 @@
 <meta property="og:description" content="Social media campaigns, reels, 3D and print. Amman, Jordan.">
 <meta property="og:image" content="https://mustafanofl32.github.io/qadan-portfolio/media/v06-poster.jpg">
 <link rel="manifest" href="data:application/manifest+json,{\"name\":\"Mohammed Qadan\",\"icons\":[{\"src\":\"https://mustafanofl32.github.io/qadan-portfolio/icon-512.png\",\"sizes\":\"512x512\",\"type\":\"image/png\"}]}">
-<meta name="theme-color" content="#1E211B">
+<meta name="theme-color" content="#F6F7F2">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -17,7 +17,7 @@
   (function () {
     var d = document.documentElement;
     try {
-      var t = localStorage.getItem('mq-theme'); if (t) d.setAttribute('data-theme', t);
+      var t = localStorage.getItem('mq-theme2'); if (t) d.setAttribute('data-theme', t);
       var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('mq-lang');
       if (l === 'ar') { d.lang = 'ar'; d.dir = 'rtl'; }
     } catch (e) {}
@@ -36,11 +36,6 @@
   --body:"Manrope", "Segoe UI", system-ui, sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
   --spring:cubic-bezier(.34,1.4,.64,1);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){ color-scheme:dark;
-    --bg:#1E211B; --panel:#272B23; --ink:#EEF1E8; --muted:#A9B29C; --faint:#879179; --rule:#353A2F;
-    --accent:#C7D83A; --shade:rgba(0,0,0,.5); --q1:#4F7A3E; --q2:#8FB06E; --btn:#C7D83A; --on-btn:#1E211B; }
 }
 :root[data-theme="dark"]{ color-scheme:dark;
   --bg:#1E211B; --panel:#272B23; --ink:#EEF1E8; --muted:#A9B29C; --faint:#879179; --rule:#353A2F;
@@ -90,7 +85,6 @@ a:hover .roll > span,.roll:hover > span{transform:translateY(-1.3em)}
 #theme:hover svg{transform:rotate(40deg)}
 .switch .i-sun{display:none}
 :root[data-theme="dark"] .switch .i-sun{display:block} :root[data-theme="dark"] .switch .i-moon{display:none}
-@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .switch .i-sun{display:block} :root:not([data-theme="light"]) .switch .i-moon{display:none} }
 .lang-btn{font-family:"IBM Plex Sans Arabic", var(--body)}
 
 /* ---------- intro ---------- */
@@ -470,7 +464,6 @@ html.locked,html.locked body{overflow:hidden}
           <p><span class="t" lang="en">Ongoing social content for a cheese-bread restaurant with three branches in Amman. I did the idea, design and execution for all of it, including the logo: product posts, the Treasure Card loyalty campaign, seasonal posts for the World Cup and Independence Day, and the reels above.</span><span class="t" lang="ar">محتوى مستمر لمطعم معجنات بالجبن له ثلاثة فروع في عمّان. توليت الفكرة والتصميم والتنفيذ بالكامل، ومن ضمنها الشعار: منشورات المنتجات، وحملة بطاقة الكنز للولاء، ومنشورات مناسبات كأس العالم وعيد الاستقلال، والريلز أعلاه.</span></p>
           <dl>
             <dt><span class="t" lang="en">Work</span><span class="t" lang="ar">العمل</span></dt><dd><span class="t" lang="en">Logo, posts, reels, copy</span><span class="t" lang="ar">الشعار، المنشورات، الريلز، النصوص</span></dd>
-            <dt><span class="t" lang="en">Formats</span><span class="t" lang="ar">المقاسات</span></dt><dd><span class="t" lang="en">4:5 posts, 9:16 reels</span><span class="t" lang="ar">منشورات 4:5، ريلز 9:16</span></dd>
             <dt><span class="t" lang="en">Language</span><span class="t" lang="ar">اللغة</span></dt><dd><span class="t" lang="en">Arabic</span><span class="t" lang="ar">العربية</span></dd>
           </dl>
         </div>
@@ -616,8 +609,8 @@ html.locked,html.locked body{overflow:hidden}
 
   // theme
   document.getElementById('theme').addEventListener('click', function () {
-    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    var next = dark ? 'light' : 'dark'; root.setAttribute('data-theme', next); store('mq-theme', next);
+    var dark = root.getAttribute('data-theme') === 'dark';
+    var next = dark ? 'light' : 'dark'; root.setAttribute('data-theme', next); store('mq-theme2', next);
   });
 
   // cursor label that follows the pointer over media, and client preview images
