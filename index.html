@@ -8,8 +8,11 @@
 <meta property="og:title" content="Mohammed Qadan · Graphic & Multimedia Designer">
 <meta property="og:description" content="Social media campaigns, reels, 3D and print. Amman, Jordan.">
 <meta property="og:image" content="https://mustafanofl32.github.io/qadan-portfolio/media/v06-poster.jpg">
-<meta name="theme-color" content="#0F120E">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23173A18'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='%23ECEFE6' text-anchor='middle'%3EQ%3C/text%3E%3Cpath d='M44 14 30 50' stroke='%23C7D83A' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="manifest" href="data:application/manifest+json,{\"name\":\"Mohammed Qadan\",\"icons\":[{\"src\":\"https://mustafanofl32.github.io/qadan-portfolio/icon-512.png\",\"sizes\":\"512x512\",\"type\":\"image/png\"}]}">
+<meta name="theme-color" content="#1E211B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>
   (function () {
     var d = document.documentElement;
@@ -26,8 +29,9 @@
 <style>
 :root{
   color-scheme:light;
-  --bg:#F3F4EE; --panel:#E6E9DF; --ink:#141811; --muted:#4F5846; --faint:#5F6855; --rule:#D5DACB;
-  --accent:#4C6A22; --lime:#C7D83A; --on-lime:#141811; --forest:#173A18; --shade:rgba(20,24,17,.14);
+  --bg:#F6F7F2; --panel:#E9ECE2; --ink:#1E211B; --muted:#4D5745; --faint:#5E6852; --rule:#D6DBCB;
+  --accent:#173A18; --olive:#64824E; --lime:#C7D83A; --on-lime:#1E211B; --forest:#173A18; --shade:rgba(30,33,27,.16);
+  --q1:#173A18; --q2:#64824E; --btn:#173A18; --on-btn:#F6F7F2;
   --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body:"Manrope", "Segoe UI", system-ui, sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
@@ -35,12 +39,12 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){ color-scheme:dark;
-    --bg:#0F120E; --panel:#181D16; --ink:#ECEFE6; --muted:#A3AC98; --faint:#7C8672; --rule:#262C22;
-    --accent:#C7D83A; --shade:rgba(0,0,0,.5); }
+    --bg:#1E211B; --panel:#272B23; --ink:#EEF1E8; --muted:#A9B29C; --faint:#879179; --rule:#353A2F;
+    --accent:#C7D83A; --shade:rgba(0,0,0,.5); --q1:#4F7A3E; --q2:#8FB06E; --btn:#C7D83A; --on-btn:#1E211B; }
 }
 :root[data-theme="dark"]{ color-scheme:dark;
-  --bg:#0F120E; --panel:#181D16; --ink:#ECEFE6; --muted:#A3AC98; --faint:#7C8672; --rule:#262C22;
-  --accent:#C7D83A; --shade:rgba(0,0,0,.5); }
+  --bg:#1E211B; --panel:#272B23; --ink:#EEF1E8; --muted:#A9B29C; --faint:#879179; --rule:#353A2F;
+  --accent:#C7D83A; --shade:rgba(0,0,0,.5); --q1:#4F7A3E; --q2:#8FB06E; --btn:#C7D83A; --on-btn:#1E211B; }
 html[lang="ar"]{ --display:"IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif; --body:"IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif; }
 html[lang="en"] [lang="ar"].t, html[lang="ar"] .t[lang="en"]{display:none}
 
@@ -71,10 +75,10 @@ a:hover .roll > span,.roll:hover > span{transform:translateY(-1.3em)}
 /* ---------- top bar ---------- */
 .top{display:flex; justify-content:space-between; align-items:center; gap:16px; padding-block:24px}
 .top .name{font-family:var(--display); font-weight:600; font-size:18px; white-space:nowrap; display:inline-flex; align-items:center; gap:10px}
-.mark{display:inline-grid; place-items:center; width:32px; height:32px; border-radius:9px; background:var(--forest); color:#ECEFE6; font-size:13px; font-weight:700; letter-spacing:-.02em; transition:transform .6s var(--spring)}
-.mark b{color:var(--lime); font-weight:400; display:inline-block; transition:transform .6s var(--spring)}
-.name:hover .mark{transform:rotate(-8deg)}
-.name:hover .mark b{transform:rotate(25deg)}
+.logo{width:54px; height:32px; overflow:visible}
+.logo .q1{stop-color:var(--q1)} .logo .q2{stop-color:var(--q2)}
+.logo .sl{transform-box:fill-box; transform-origin:center; transition:transform .7s var(--spring)}
+.name:hover .logo .sl{transform:rotate(14deg)}
 .top .right{display:flex; align-items:center; gap:clamp(14px,2.6vw,30px)}
 .top nav{display:flex; gap:clamp(14px,2.6vw,30px); font-size:15px; color:var(--muted)}
 .top nav a:hover{color:var(--ink)}
@@ -93,7 +97,7 @@ a:hover .roll > span,.roll:hover > span{transform:translateY(-1.3em)}
 .intro{padding-block:clamp(56px,8vw,110px) clamp(36px,5vw,64px)}
 .intro h1{font-size:clamp(42px,6.6vw,96px); font-weight:600; line-height:1.02; max-width:13ch}
 html[lang="ar"] .intro h1{line-height:1.2; max-width:12ch}
-.intro h1 .slash{color:var(--accent); font-weight:400; margin-inline:.1em; display:inline-block; transition:transform .8s var(--spring)}
+.intro h1 .slash{color:var(--lime); font-weight:400; margin-inline:.1em; display:inline-block; transition:transform .8s var(--spring)}
 .intro h1:hover .slash{transform:rotate(18deg) scale(1.1)}
 .intro p{font-size:clamp(18px,1.6vw,21px); color:var(--muted); max-width:52ch; margin:28px 0 0}
 .intro p b{color:var(--ink); font-weight:600}
@@ -105,7 +109,7 @@ html[lang="ar"] .intro h1{line-height:1.2; max-width:12ch}
 .btn .ic{transition:transform .5s var(--spring)}
 .btn:hover .ic{transform:translateX(3px) rotate(-8deg)}
 html[dir="rtl"] .btn:hover .ic{transform:translateX(-3px) rotate(8deg)}
-.btn.solid{background:var(--ink); color:var(--bg)}
+.btn.solid{background:var(--btn); color:var(--on-btn)}
 .btn.solid::before{background:var(--lime)}
 .btn.solid:hover{color:var(--on-lime)}
 .btn.line{border:1px solid var(--rule); color:var(--ink)}
@@ -245,6 +249,8 @@ html[dir="rtl"] .row .arrow{transform:scaleX(-1)}
 .copied{background:var(--forest)!important; color:#ECEFE6!important}
 footer{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; padding-block:28px 40px; border-top:1px solid var(--rule); color:var(--faint); font-size:14px}
 footer a{color:var(--muted)}
+footer .brand{display:inline-flex; align-items:center; gap:8px; color:var(--ink); font-family:var(--display); font-weight:600}
+.logo.sm{width:40px; height:24px}
 
 /* ---------- floating WhatsApp ---------- */
 .wa{position:fixed; z-index:18; bottom:calc(env(safe-area-inset-bottom,0px) + 20px); inset-inline-end:20px; display:flex; align-items:center; gap:0; height:56px; padding-inline:16px; border-radius:28px; background:#1FA855; color:#fff; box-shadow:0 14px 30px -14px rgba(0,0,0,.35); font-weight:600; font-size:15px; transition:gap .5s var(--ease), padding .5s var(--ease), transform .45s var(--spring)}
@@ -313,7 +319,7 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
 
 <div class="wrap">
   <header class="top">
-    <a class="name" href="#top"><span class="mark" aria-hidden="true">Q<b>/</b>D</span><span class="t" lang="en">Mohammed Qadan</span><span class="t" lang="ar">محمد قعدان</span></a>
+    <a class="name" href="#top"><svg class="logo" viewBox="0 0 100 60" aria-hidden="true"><defs><linearGradient id="qg" x1="0" y1="0" x2="1" y2="0.35"><stop offset="0" class="q1"/><stop offset="1" class="q2"/></linearGradient></defs><path d="M39.2 38A19 19 0 1 0 25.3 48.7" fill="none" stroke="url(#qg)" stroke-width="3.6"/><path d="M27.5 37.5 38.5 52" stroke="url(#qg)" stroke-width="5"/><path class="sl" d="M58.5 7 45.5 53" stroke="#C7D83A" stroke-width="1.8"/><path d="M68 11h8.5a19 19 0 0 1 0 38H68z" fill="none" stroke="currentColor" stroke-width="3.6"/></svg><span class="t" lang="en">Mohammed Qadan</span><span class="t" lang="ar">محمد قعدان</span></a>
     <div class="right">
       <nav aria-label="Sections">
         <a href="#reels"><span class="roll"><span class="t" lang="en">Work</span><span class="t" lang="ar">الأعمال</span></span></a>
@@ -518,7 +524,7 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
     </section>
   </main>
 
-  <footer><span><span class="t" lang="en">© 2026 Mohammed Qadan</span><span class="t" lang="ar">© 2026 محمد قعدان</span></span><span><span class="t" lang="en">Portfolio PDF: <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_EN.pdf" target="_blank" rel="noopener">English</a> · <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_AR.pdf" target="_blank" rel="noopener">العربية</a></span><span class="t" lang="ar">ملف الأعمال PDF: <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_AR.pdf" target="_blank" rel="noopener">العربية</a> · <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_EN.pdf" target="_blank" rel="noopener">English</a></span></span><a class="ul" href="#top"><span class="t" lang="en">Back to top</span><span class="t" lang="ar">إلى الأعلى</span></a></footer>
+  <footer><span class="brand"><svg class="logo sm" viewBox="0 0 100 60" aria-hidden="true"><defs><linearGradient id="qg2" x1="0" y1="0" x2="1" y2="0.35"><stop offset="0" class="q1"/><stop offset="1" class="q2"/></linearGradient></defs><path d="M39.2 38A19 19 0 1 0 25.3 48.7" fill="none" stroke="url(#qg2)" stroke-width="3.6"/><path d="M27.5 37.5 38.5 52" stroke="url(#qg2)" stroke-width="5"/><path class="sl" d="M58.5 7 45.5 53" stroke="#C7D83A" stroke-width="1.8"/><path d="M68 11h8.5a19 19 0 0 1 0 38H68z" fill="none" stroke="currentColor" stroke-width="3.6"/></svg> Q-Designer</span><span><span class="t" lang="en">© 2026 Mohammed Qadan</span><span class="t" lang="ar">© 2026 محمد قعدان</span></span><span><span class="t" lang="en">Portfolio PDF: <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_EN.pdf" target="_blank" rel="noopener">English</a> · <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_AR.pdf" target="_blank" rel="noopener">العربية</a></span><span class="t" lang="ar">ملف الأعمال PDF: <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_AR.pdf" target="_blank" rel="noopener">العربية</a> · <a class="ul" href="pdf/Mohammed_Qadan_Portfolio_EN.pdf" target="_blank" rel="noopener">English</a></span></span><a class="ul" href="#top"><span class="t" lang="en">Back to top</span><span class="t" lang="ar">إلى الأعلى</span></a></footer>
 </div>
 
 <a class="wa" data-wa href="https://wa.me/962792922159" target="_blank" rel="noopener" aria-label="WhatsApp">
