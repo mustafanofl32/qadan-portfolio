@@ -31,7 +31,7 @@
   color-scheme:light;
   --bg:#F6F7F2; --panel:#E9ECE2; --ink:#1E211B; --muted:#4D5745; --faint:#5E6852; --rule:#D6DBCB;
   --accent:#173A18; --olive:#64824E; --lime:#C7D83A; --on-lime:#1E211B; --forest:#173A18; --shade:rgba(30,33,27,.16);
-  --q1:#173A18; --q2:#64824E; --btn:#173A18; --on-btn:#F6F7F2;
+  --q1:#173A18; --q2:#64824E; --btn:#173A18; --on-btn:#F6F7F2; --stage-hi:#FFFFFF;
   --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body:"Manrope", "Segoe UI", system-ui, sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
@@ -39,7 +39,7 @@
 }
 :root[data-theme="dark"]{ color-scheme:dark;
   --bg:#1E211B; --panel:#272B23; --ink:#EEF1E8; --muted:#A9B29C; --faint:#879179; --rule:#353A2F;
-  --accent:#C7D83A; --shade:rgba(0,0,0,.5); --q1:#4F7A3E; --q2:#8FB06E; --btn:#C7D83A; --on-btn:#1E211B; }
+  --accent:#C7D83A; --shade:rgba(0,0,0,.5); --q1:#4F7A3E; --q2:#8FB06E; --btn:#C7D83A; --on-btn:#1E211B; --stage-hi:#4A5440; }
 html[lang="ar"]{ --display:"IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif; --body:"IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif; }
 html[lang="en"] [lang="ar"].t, html[lang="ar"] .t[lang="en"]{display:none}
 
@@ -302,20 +302,26 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
 @media (max-width:820px){ .lb .stage{padding:0 12px} .lb .stage .nav{top:auto; bottom:-62px; margin:0} .lb .stage .prev{inset-inline-start:14px} .lb .stage .next{inset-inline-end:14px} .lb .bar-bottom{min-height:74px; padding-inline:76px} }
 html.locked,html.locked body{overflow:hidden}
 
-/* ---------- hero portrait ---------- */
-.intro{display:grid; grid-template-columns:7fr 5fr; gap:clamp(32px,5vw,80px); align-items:center}
-.hero-photo{position:relative; isolation:isolate; max-width:470px; justify-self:end; width:100%}
-.hero-photo .ph{border-radius:18px; overflow:hidden; aspect-ratio:928/1152; background:#1E211B; box-shadow:0 40px 80px -40px var(--shade)}
-.hero-photo img{width:100%; height:100%; object-fit:cover; transition:transform 1.4s var(--ease)}
-.hero-photo:hover img{transform:scale(1.03)}
-.hero-photo .slash-line{position:absolute; z-index:-1; top:-26px; bottom:-26px; inset-inline-end:22%; width:2px; background:var(--lime); transform:rotate(14deg); transition:transform 1s var(--spring)}
-.hero-photo:hover .slash-line{transform:rotate(20deg)}
+/* ---------- hero portrait: cut-out on a stage ---------- */
+.intro{display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,64px); align-items:end}
+.intro-text{padding-bottom:clamp(8px,2vw,28px)}
+.hero-cut{position:relative; width:100%; max-width:620px; justify-self:end; aspect-ratio:4/5; isolation:isolate}
+.hero-cut .stage{position:absolute; inset:22% 0 0 0; border-radius:28px; overflow:hidden; background:radial-gradient(120% 90% at 50% 18%, var(--stage-hi), var(--panel) 70%); box-shadow:0 40px 80px -48px var(--shade)}
+.hero-cut .slash-line{position:absolute; top:-10%; bottom:-10%; left:62%; width:3px; background:var(--lime); transform:rotate(16deg); transition:transform 1s var(--spring)}
+.hero-cut img{position:absolute; z-index:1; left:50%; bottom:0; height:100%; width:auto; max-width:none; transform:translateX(-50%); clip-path:inset(-40% -40% 0 -40% round 0 0 28px 28px); filter:drop-shadow(0 24px 30px rgba(20,24,17,.18)); transition:transform 1.2s var(--ease)}
+html[dir="rtl"] .hero-cut img{transform:translateX(50%); left:auto; right:50%}
+.hero-cut:hover img{transform:translateX(-50%) scale(1.015)}
+html[dir="rtl"] .hero-cut:hover img{transform:translateX(50%) scale(1.015)}
+.hero-cut:hover .slash-line{transform:rotate(22deg)}
 @media (prefers-reduced-motion:no-preference){
-  .hero-photo .ph{animation:open 1.3s .15s var(--ease) both}
-  .hero-photo .slash-line{animation:draw 1.2s .7s var(--ease) both}
+  .hero-cut .stage{animation:stagein 1.2s .1s var(--ease) both}
+  .hero-cut img{animation:cutin 1.3s .35s var(--ease) both}
+  .hero-cut .slash-line{animation:draw 1.2s .8s var(--ease) both}
 }
+@keyframes stagein{from{opacity:0; transform:scale(.94) translateY(20px)}}
+@keyframes cutin{from{opacity:0; translate:0 36px}}
 @keyframes draw{from{clip-path:inset(0 0 100% 0)} to{clip-path:inset(0 0 0 0)}}
-@media (max-width:820px){ .intro{grid-template-columns:1fr} .hero-photo{justify-self:start; max-width:420px} }
+@media (max-width:820px){ .intro{grid-template-columns:1fr} .hero-cut{justify-self:center; max-width:400px; margin-top:12px} }
 @media (max-width:1000px){ .reels{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:820px){
   .sec-head,.cheez,.about{grid-template-columns:1fr}
@@ -380,9 +386,9 @@ html.locked,html.locked body{overflow:hidden}
         </a>
       </div>
       </div>
-      <figure class="hero-photo">
-        <span class="slash-line" aria-hidden="true"></span>
-        <div class="ph"><img src="img/hero-standing.webp" alt="Mohammed Qadan, graphic and multimedia designer" fetchpriority="high"></div>
+      <figure class="hero-cut">
+        <div class="stage" aria-hidden="true"><span class="slash-line"></span></div>
+        <img src="img/hero-suit.webp" alt="Mohammed Qadan, graphic and multimedia designer" fetchpriority="high" width="627" height="1344">
       </figure>
     </section>
 
