@@ -152,7 +152,7 @@ section.work{padding-top:clamp(88px,11vw,150px)}
 .reels{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.6vw,22px)}
 .reel{border-radius:14px; transition:transform .7s var(--ease)}
 .reel .frame{position:relative; aspect-ratio:9/16; border-radius:14px; overflow:hidden; background:var(--panel); box-shadow:0 18px 40px -30px var(--shade); transition:box-shadow .7s var(--ease), border-radius .7s var(--ease)}
-.reel video{width:100%; height:100%; object-fit:cover; transition:transform 1.2s var(--ease)}
+.reel video,.reel.still img{width:100%; height:100%; object-fit:cover; transition:transform 1.2s var(--ease)}
 .reel .bar{position:absolute; inset-inline:0; bottom:0; height:3px; background:var(--lime); transform:scaleX(0); transform-origin:left; transition:transform .2s linear}
 html[dir="rtl"] .reel .bar{transform-origin:right}
 .reel .dur{position:absolute; inset-inline-end:12px; bottom:12px; font-size:12.5px; font-variant-numeric:tabular-nums; color:#fff; background:rgba(10,12,9,.62); padding:2px 8px; border-radius:10px; transition:opacity .4s, transform .5s var(--ease)}
@@ -161,7 +161,7 @@ html[dir="rtl"] .reel .bar{transform-origin:right}
 @media (hover:hover){
   .reel:hover{transform:translateY(-6px)}
   .reel:hover .frame{box-shadow:0 34px 60px -30px var(--shade); border-radius:20px}
-  .reel:hover video{transform:scale(1.06)}
+  .reel:hover video,.reel.still:hover img{transform:scale(1.06)}
   .reel:hover .dur{opacity:0; transform:translateY(6px)}
 }
 
@@ -413,11 +413,10 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
           <div class="frame"><video src="media/v09.mp4" poster="media/v09-poster.jpg" muted loop playsinline preload="none"></video><span class="bar"></span><span class="dur">0:58</span></div>
           <h3><span class="t" lang="en">Pop-up storybook</span><span class="t" lang="ar">كتاب القصص المجسّم</span></h3><p><span class="t" lang="en">Childcare centre</span><span class="t" lang="ar">حضانة أطفال</span></p>
         </article>
-        <a class="more" href="https://www.instagram.com/q_designerjo/" target="_blank" rel="noopener">
-          <span class="more-top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>@q_designerjo</span>
-          <span class="more-title"><span class="t" lang="en">More reels on Instagram</span><span class="t" lang="ar">ريلز أكثر على إنستغرام</span></span>
-          <span class="more-go"><span class="t" lang="en">Open the feed</span><span class="t" lang="ar">افتح الحساب</span><svg class="ic arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a>
+        <figure class="reel still" data-img="img/cgi-frame-2.webp" data-en="Stars Design · CGI ad" data-ar="ستارز ديزاين · إعلان CGI" data-cursor-en="View" data-cursor-ar="عرض">
+          <div class="frame"><img src="img/cgi-frame-2.webp" alt="Stars Design logo on a Dubai tower, CGI frame" loading="lazy"><span class="dur">CGI</span></div>
+          <h3><span class="t" lang="en">Logo on the skyline</span><span class="t" lang="ar">الشعار على الأفق</span></h3><p><span class="t" lang="en">Stars Design · CGI ad</span><span class="t" lang="ar">ستارز ديزاين · إعلان CGI</span></p>
+        </figure>
       </div>
     </section>
 
@@ -613,7 +612,8 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
   });
 
   // reels: preview on hover with a progress bar; play in view on touch
-  var reels = [].slice.call(document.querySelectorAll('.reel'));
+  var reels = [].slice.call(document.querySelectorAll('.reel:not(.still)'));
+  document.querySelectorAll('.reel.still').forEach(function (c) { c.tabIndex = 0; c.addEventListener('keydown', function (e) { if (e.key === 'Enter') c.click(); }); });
   reels.forEach(function (r) {
     var v = r.querySelector('video'), bar = r.querySelector('.bar');
     v.addEventListener('timeupdate', function () { if (v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')'; });
