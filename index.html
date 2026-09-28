@@ -164,11 +164,22 @@ html[dir="rtl"] .reel .bar{transform-origin:right}
   .reel:hover video{transform:scale(1.06)}
   .reel:hover .dur{opacity:0; transform:translateY(6px)}
 }
-.reel.feature{grid-column:span 2; display:grid; grid-template-columns:1fr 1fr; gap:clamp(12px,1.6vw,22px); align-items:start}
-.reel.feature .copy{align-self:stretch; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:4px}
-.reel.feature .copy h3{font-size:clamp(24px,2.4vw,32px); margin:0; line-height:1.15}
-.reel.feature .copy p{font-size:16px; margin-top:12px}
-.reel.feature .watch{display:inline-flex; align-items:center; gap:8px; margin-top:18px; font-size:15px; color:var(--ink)}
+
+.more{aspect-ratio:9/16; border-radius:14px; padding:clamp(18px,2vw,26px); display:flex; flex-direction:column; justify-content:space-between; color:#EEF1E8; background:linear-gradient(150deg,#173A18,#64824E); position:relative; overflow:hidden; isolation:isolate; transition:transform .7s var(--ease), box-shadow .7s var(--ease)}
+.more::before{content:""; position:absolute; inset:0; z-index:-1; background:var(--lime); clip-path:circle(0% at 100% 100%); transition:clip-path .8s var(--ease)}
+html[dir="rtl"] .more::before{clip-path:circle(0% at 0% 100%)}
+.more-top{display:inline-flex; align-items:center; gap:8px; font-size:14.5px; opacity:.9}
+.more-title{font-family:var(--display); font-size:clamp(24px,2.3vw,32px); font-weight:600; line-height:1.1; letter-spacing:-.015em}
+.more-go{display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:600}
+.more .arrow{transition:transform .6s var(--spring)}
+html[dir="rtl"] .more .arrow{transform:scaleX(-1)}
+@media (hover:hover){
+  .more:hover{transform:translateY(-6px); box-shadow:0 34px 60px -30px var(--shade); color:#1E211B}
+  .more:hover::before{clip-path:circle(150% at 100% 100%)}
+  html[dir="rtl"] .more:hover::before{clip-path:circle(150% at 0% 100%)}
+  .more:hover .arrow{transform:rotate(45deg)}
+  html[dir="rtl"] .more:hover .arrow{transform:scaleX(-1) rotate(45deg)}
+}
 
 /* ---------- CheeZ ---------- */
 .cheez{display:grid; grid-template-columns:5fr 7fr; gap:clamp(28px,4vw,64px); align-items:start}
@@ -298,7 +309,7 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
 }
 @media (max-width:560px){
   body{font-size:16px}
-  .reel.feature{grid-template-columns:1fr}
+  .more{aspect-ratio:auto; min-height:220px}
   .posts{grid-template-columns:1fr 1fr}
   .cols{grid-template-columns:1fr}
   .showreel{grid-template-columns:1fr 1fr} .showreel .cell:last-child{display:none}
@@ -374,13 +385,9 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
         <p><span class="t" lang="en">Short-form video for Instagram and TikTok, planned, designed and edited by me. Hover to preview, click to watch with sound.</span><span class="t" lang="ar">فيديوهات قصيرة لإنستغرام وتيك توك، خططت لها وصممتها ومنتجتها بنفسي. مرّر المؤشر للمعاينة، واضغط للمشاهدة بالصوت.</span></p>
       </div>
       <div class="reels" data-group="reels">
-        <article class="reel feature" data-video="media/v03.mp4" data-en="Essence of Beauty × Slazenger" data-ar="إسنس أوف بيوتي × سلازنجر" data-cursor-en="Play" data-cursor-ar="تشغيل">
+        <article class="reel" data-video="media/v03.mp4" data-en="Essence of Beauty × Slazenger" data-ar="إسنس أوف بيوتي × سلازنجر" data-cursor-en="Play" data-cursor-ar="تشغيل">
           <div class="frame"><video src="media/v03.mp4" poster="media/v03-poster.jpg" muted loop playsinline preload="none"></video><span class="bar"></span><span class="dur">0:35</span></div>
-          <div class="copy">
-            <h3>Essence of Beauty × Slazenger</h3>
-            <p><span class="t" lang="en">One of four reels for the Slazenger sport deodorant range. I set it in a dark, athletic world with the can lit like equipment, and handled the concept, design, copy and edit.</span><span class="t" lang="ar">واحد من أربعة ريلز لمجموعة مزيلات العرق الرياضية من سلازنجر. وضعت المنتج في عالم رياضي داكن تُضاء فيه العبوة كأنها معدات رياضية، وتوليت الفكرة والتصميم والنص والمونتاج.</span></p>
-            <span class="watch"><span class="ul"><span class="t" lang="en">Watch with sound</span><span class="t" lang="ar">شاهد بالصوت</span></span></span>
-          </div>
+          <h3>Slazenger Active Sport</h3><p>Essence of Beauty × Slazenger</p>
         </article>
         <article class="reel" data-video="media/v06.mp4" data-en="CheeZ Khaliya · World Cup 2026" data-ar="خلية CheeZ · كأس العالم 2026" data-cursor-en="Play" data-cursor-ar="تشغيل">
           <div class="frame"><video src="media/v06.mp4" poster="media/v06-poster.jpg" muted loop playsinline preload="none"></video><span class="bar"></span><span class="dur">0:29</span></div>
@@ -406,6 +413,11 @@ html[dir="rtl"] .lb .nav svg{transform:scaleX(-1)}
           <div class="frame"><video src="media/v09.mp4" poster="media/v09-poster.jpg" muted loop playsinline preload="none"></video><span class="bar"></span><span class="dur">0:58</span></div>
           <h3><span class="t" lang="en">Pop-up storybook</span><span class="t" lang="ar">كتاب القصص المجسّم</span></h3><p><span class="t" lang="en">Childcare centre</span><span class="t" lang="ar">حضانة أطفال</span></p>
         </article>
+        <a class="more" href="https://www.instagram.com/q_designerjo/" target="_blank" rel="noopener">
+          <span class="more-top"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>@q_designerjo</span>
+          <span class="more-title"><span class="t" lang="en">More reels on Instagram</span><span class="t" lang="ar">ريلز أكثر على إنستغرام</span></span>
+          <span class="more-go"><span class="t" lang="en">Open the feed</span><span class="t" lang="ar">افتح الحساب</span><svg class="ic arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
       </div>
     </section>
 
