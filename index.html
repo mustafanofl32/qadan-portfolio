@@ -158,8 +158,17 @@ html[lang="ar"] .facts dd{line-height:1.85}
 /* media tiles */
 .mg{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--gap); align-items:start}
 .mg.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-.mg.pair{grid-template-columns:repeat(2,minmax(0,1fr)); max-width:640px}
+.mg.pair{grid-template-columns:repeat(2,minmax(0,1fr))}
 .mg + .mg{margin-top:var(--gap)}
+.mg.jr{display:flex; gap:var(--gap); align-items:flex-start}
+.mg.jr > .m,.jrow > .m{flex:var(--ar) 1 0%; min-width:0}
+.mg.five{grid-template-columns:repeat(6,minmax(0,1fr))}
+.mg.five > .m{grid-column:span 2}
+.mg.five > .m:nth-child(n+4){grid-column:span 3}
+.jrow{display:flex; gap:var(--gap); align-items:flex-start}
+.jrow + .jrow{margin-top:clamp(24px,3vw,40px)}
+.jrow .fr img{height:auto}
+.jrow .fr.r916 img{height:100%}
 .mg.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 .mg.four figcaption{flex-direction:column; gap:1px}
 .mg-label{font-size:13.5px; font-weight:600; color:var(--faint); letter-spacing:.02em; margin:0 0 12px}
@@ -427,6 +436,11 @@ html.locked,html.locked body{overflow:hidden}
   .mg > .m.lead{grid-column:1 / -1; max-width:360px; width:100%; justify-self:center}
   .mg.two > .m.lead{grid-column:auto; max-width:none}
   .mg.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mg.five{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mg.five > .m,.mg.five > .m:nth-child(n+4){grid-column:auto}
+  .mg.five > .m.lead{grid-column:1 / -1}
+  .jrow{display:block}
+  .jrow > .m + .m{margin-top:28px}
   .mg.four > .m.lead{grid-column:auto; max-width:none}
   .mg figcaption{flex-direction:column; gap:1px}
   .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -527,10 +541,10 @@ html.locked,html.locked body{overflow:hidden}
           </dl>
           <div class="rv" data-group="cheez">
             <p class="mg-label"><span class="t" lang="en">Treasure Card</span><span class="t" lang="ar">بطاقة الكنز</span></p>
-            <div class="mg two">
-              <figure class="m lead"><a class="fr r916" href="media/v13.mp4" data-media="video" data-poster="media/v13-poster.webp" data-en="CheeZ Khaliya · Treasure Card reel, original offer" data-ar="خلية CheeZ · ريل بطاقة الكنز، العرض الأصلي"><img src="media/v13-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:35</span></a>
+            <div class="mg jr">
+              <figure class="m" style="--ar:0.5625"><a class="fr r916" href="media/v13.mp4" data-media="video" data-poster="media/v13-poster.webp" data-en="CheeZ Khaliya · Treasure Card reel, original offer" data-ar="خلية CheeZ · ريل بطاقة الكنز، العرض الأصلي"><img src="media/v13-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:35</span></a>
               <figcaption><span class="ti"><span class="t" lang="en">Treasure Card</span><span class="t" lang="ar">بطاقة الكنز</span></span><span class="sub"><span class="t" lang="en">Reel · original offer</span><span class="t" lang="ar">ريل · العرض الأصلي</span></span></figcaption></figure>
-              <figure class="m"><a class="fr" href="img/full/cheez-treasure-card.webp" data-media="image" data-en="CheeZ Khaliya · Treasure Card flyer, original offer" data-ar="خلية CheeZ · فلاير بطاقة الكنز، العرض الأصلي"><img src="img/cheez-treasure-card.webp" alt="" loading="lazy" width="900" height="1272"></a>
+              <figure class="m" style="--ar:0.7075"><a class="fr" href="img/full/cheez-treasure-card.webp" data-media="image" data-en="CheeZ Khaliya · Treasure Card flyer, original offer" data-ar="خلية CheeZ · فلاير بطاقة الكنز، العرض الأصلي"><img src="img/cheez-treasure-card.webp" alt="" loading="lazy" width="900" height="1272"></a>
               <figcaption><span class="ti"><span class="t" lang="en">Treasure Card</span><span class="t" lang="ar">بطاقة الكنز</span></span><span class="sub"><span class="t" lang="en">Flyer · original offer</span><span class="t" lang="ar">فلاير · العرض الأصلي</span></span></figcaption></figure>
               </div>
             <p class="mg-label"><span class="t" lang="en">Reels</span><span class="t" lang="ar">الريلز</span></p>
@@ -733,7 +747,7 @@ html.locked,html.locked body{overflow:hidden}
           </dl>
           <div class="rv" data-group="qimma">
             <p class="mg-label"><span class="t" lang="en">Reels and key visual</span><span class="t" lang="ar">الريلز وصورة الحملة</span></p>
-            <div class="mg">
+            <div class="mg five">
               <figure class="m lead"><a class="fr r916" href="media/v14.mp4" data-media="video" data-poster="media/v14-poster.webp" data-en="Al-Qimma Delivery · Live Location reel" data-ar="القمة للتوصيل · ريل لايف لوكيشن"><img src="media/v14-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:25</span></a>
               <figcaption><span class="ti"><span class="t" lang="en">Live Location</span><span class="t" lang="ar">لايف لوكيشن</span></span><span class="sub"><span class="t" lang="en">Reel</span><span class="t" lang="ar">ريل</span></span></figcaption></figure>
               <figure class="m"><a class="fr r916" href="media/v04.mp4" data-media="video" data-poster="media/v04-poster.webp" data-en="Al-Qimma Delivery · The delivery story reel" data-ar="القمة للتوصيل · ريل قصة التوصيل"><img src="media/v04-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">1:09</span></a>
@@ -756,23 +770,29 @@ html.locked,html.locked body{overflow:hidden}
         <h2 id="more-h"><span class="t" lang="en">More work</span><span class="t" lang="ar">أعمال أخرى</span></h2>
         <p><span class="t" lang="en">Work outside the four projects above: a reel for a childcare centre, 3D and CGI, posters and a website design.</span><span class="t" lang="ar">أعمال خارج المشاريع الأربعة أعلاه: ريل لحضانة أطفال، وأعمال ثلاثية الأبعاد وCGI، وملصقات، وتصميم موقع.</span></p>
       </div>
-      <div class="masonry rv" data-group="more">
-        <figure class="m"><a class="fr r916" href="media/v09.mp4" data-media="video" data-poster="media/v09-poster.webp" data-en="Childcare centre · Pop-up storybook" data-ar="حضانة أطفال · كتاب القصص المجسّم"><img src="media/v09-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:58</span></a>
+      <div class="jrows rv" data-group="more">
+        <div class="jrow">
+          <figure class="m" style="--ar:0.5625"><a class="fr r916" href="media/v09.mp4" data-media="video" data-poster="media/v09-poster.webp" data-en="Childcare centre · Pop-up storybook" data-ar="حضانة أطفال · كتاب القصص المجسّم"><img src="media/v09-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:58</span></a>
               <figcaption><span class="ti"><span class="t" lang="en">Pop-up storybook</span><span class="t" lang="ar">كتاب القصص المجسّم</span></span><span class="sub"><span class="t" lang="en">Childcare centre · reel</span><span class="t" lang="ar">حضانة أطفال · ريل</span></span></figcaption></figure>
-        <figure class="m"><a class="fr" href="img/donuts-render.webp" data-media="image" data-en="Donuts · Blender render" data-ar="دونات · رندر على Blender"><img src="img/donuts-render.webp" alt="" loading="lazy" width="1600" height="900"></a>
+          <figure class="m" style="--ar:1.7778"><a class="fr" href="img/donuts-render.webp" data-media="image" data-en="Donuts · Blender render" data-ar="دونات · رندر على Blender"><img src="img/donuts-render.webp" alt="" loading="lazy" width="1600" height="900"></a>
               <figcaption><span class="ti"><span class="t" lang="en">Donuts</span><span class="t" lang="ar">دونات</span></span><span class="sub"><span class="t" lang="en">Blender · modelling, shading, render</span><span class="t" lang="ar">Blender · نمذجة وخامات ورندر</span></span></figcaption></figure>
-        <figure class="m"><a class="fr" href="img/work-cola.webp" data-media="image" data-en="Matrix Cola · poster" data-ar="ماتريكس كولا · ملصق"><img src="img/work-cola.webp" alt="" loading="lazy" width="1100" height="1556"></a>
-              <figcaption><span class="ti">Matrix Cola</span><span class="sub"><span class="t" lang="en">Poster</span><span class="t" lang="ar">ملصق</span></span></figcaption></figure>
-        <figure class="m"><a class="fr" href="img/cgi-frame-2.webp" data-media="image" data-en="Stars Design · CGI ad, logo on a tower" data-ar="ستارز ديزاين · إعلان CGI، الشعار على برج"><img src="img/cgi-frame-2.webp" alt="" loading="lazy" width="900" height="1600"></a>
+          <figure class="m" style="--ar:0.5625"><a class="fr" href="img/cgi-frame-2.webp" data-media="image" data-en="Stars Design · CGI ad, logo on a tower" data-ar="ستارز ديزاين · إعلان CGI، الشعار على برج"><img src="img/cgi-frame-2.webp" alt="" loading="lazy" width="900" height="1600"></a>
               <figcaption><span class="ti"><span class="t" lang="en">Logo on the skyline</span><span class="t" lang="ar">الشعار على الأفق</span></span><span class="sub"><span class="t" lang="en">Stars Design · CGI ad</span><span class="t" lang="ar">ستارز ديزاين · إعلان CGI</span></span></figcaption></figure>
-        <figure class="m"><a class="fr" href="img/night-render.webp" data-media="image" data-en="Night Rain · 3D environment" data-ar="ليلة ماطرة · بيئة ثلاثية الأبعاد"><img src="img/night-render.webp" alt="" loading="lazy" width="1600" height="900"></a>
-              <figcaption><span class="ti"><span class="t" lang="en">Night Rain</span><span class="t" lang="ar">ليلة ماطرة</span></span><span class="sub"><span class="t" lang="en">Blender · environment</span><span class="t" lang="ar">Blender · بيئة</span></span></figcaption></figure>
-        <figure class="m"><a class="fr" href="img/work-dispersion.webp" data-media="image" data-en="The best chance · photo manipulation" data-ar="The best chance · معالجة صور"><img src="img/work-dispersion.webp" alt="" loading="lazy" width="1600" height="1067"></a>
+        </div>
+        <div class="jrow">
+          <figure class="m" style="--ar:0.7069"><a class="fr" href="img/work-cola.webp" data-media="image" data-en="Matrix Cola · poster" data-ar="ماتريكس كولا · ملصق"><img src="img/work-cola.webp" alt="" loading="lazy" width="1100" height="1556"></a>
+              <figcaption><span class="ti">Matrix Cola</span><span class="sub"><span class="t" lang="en">Poster</span><span class="t" lang="ar">ملصق</span></span></figcaption></figure>
+          <figure class="m" style="--ar:1.4995"><a class="fr" href="img/work-dispersion.webp" data-media="image" data-en="The best chance · photo manipulation" data-ar="The best chance · معالجة صور"><img src="img/work-dispersion.webp" alt="" loading="lazy" width="1600" height="1067"></a>
               <figcaption><span class="ti">The best chance</span><span class="sub"><span class="t" lang="en">Photoshop · retouching</span><span class="t" lang="ar">فوتوشوب · ريتاتش</span></span></figcaption></figure>
-        <figure class="m"><a class="fr" href="img/cgi-blender.webp" data-media="image" data-en="Building the Stars Design logo in Blender" data-ar="بناء شعار ستارز ديزاين على Blender"><img src="img/cgi-blender.webp" alt="" loading="lazy" width="1400" height="736"></a>
-              <figcaption><span class="ti"><span class="t" lang="en">Building the Stars Design logo</span><span class="t" lang="ar">بناء شعار ستارز ديزاين</span></span><span class="sub"><span class="t" lang="en">Blender · process</span><span class="t" lang="ar">Blender · مراحل العمل</span></span></figcaption></figure>
-        <figure class="m"><a class="fr" href="img/gym-home.webp" data-media="image" data-en="Vy Health Club · website home page" data-ar="Vy Health Club · الصفحة الرئيسية للموقع"><img src="img/gym-home.webp" alt="" loading="lazy" width="1000" height="2149"></a>
+          <figure class="m" style="--ar:0.4653"><a class="fr" href="img/gym-home.webp" data-media="image" data-en="Vy Health Club · website home page" data-ar="Vy Health Club · الصفحة الرئيسية للموقع"><img src="img/gym-home.webp" alt="" loading="lazy" width="1000" height="2149"></a>
               <figcaption><span class="ti">Vy Health Club</span><span class="sub"><span class="t" lang="en">Website design</span><span class="t" lang="ar">تصميم موقع</span></span></figcaption></figure>
+        </div>
+        <div class="jrow">
+          <figure class="m" style="--ar:1.7778"><a class="fr" href="img/night-render.webp" data-media="image" data-en="Night Rain · 3D environment" data-ar="ليلة ماطرة · بيئة ثلاثية الأبعاد"><img src="img/night-render.webp" alt="" loading="lazy" width="1600" height="900"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Night Rain</span><span class="t" lang="ar">ليلة ماطرة</span></span><span class="sub"><span class="t" lang="en">Blender · environment</span><span class="t" lang="ar">Blender · بيئة</span></span></figcaption></figure>
+          <figure class="m" style="--ar:1.9022"><a class="fr" href="img/cgi-blender.webp" data-media="image" data-en="Building the Stars Design logo in Blender" data-ar="بناء شعار ستارز ديزاين على Blender"><img src="img/cgi-blender.webp" alt="" loading="lazy" width="1400" height="736"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Building the Stars Design logo</span><span class="t" lang="ar">بناء شعار ستارز ديزاين</span></span><span class="sub"><span class="t" lang="en">Blender · process</span><span class="t" lang="ar">Blender · مراحل العمل</span></span></figcaption></figure>
+        </div>
       </div>
     </section>
 
