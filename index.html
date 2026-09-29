@@ -239,8 +239,17 @@ html[dir="rtl"] .prog i{transform-origin:right}
 .ctrl button:disabled{opacity:.35; cursor:default; border-color:var(--rule)}
 html[dir="rtl"] .ctrl svg{transform:scaleX(-1)}
 .ctrl .count{min-width:6ch; text-align:center; font-size:14px; font-variant-numeric:tabular-nums; color:var(--muted)}
-.og-grid{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:var(--gap); align-items:end}
-.og.big{grid-column:span 6} .og.sm{grid-column:span 3}
+.og-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(16px,2vw,32px); align-items:start}
+.og .pp{transition:transform .7s var(--ease), box-shadow .7s var(--ease), border-radius .7s var(--ease)}
+.og .pp img{transition:transform 1.1s var(--ease)}
+.og figcaption .ti{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat; transition:color .4s, background-size .55s var(--ease)}
+html[dir="rtl"] .og figcaption .ti{background-position:100% 100%}
+@media (hover:hover){
+  .og:hover .pp,.og .pp:focus-visible{transform:translateY(-8px); box-shadow:0 34px 60px -30px var(--shade); border-radius:14px}
+  .og:hover .pp img{transform:scale(1.03)}
+  .og:hover figcaption .ti{color:var(--accent); background-size:100% 1px}
+}
+.og .pp:active{transform:scale(.985)}
 .facts-end{position:static; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px clamp(24px,4vw,64px); margin-top:clamp(72px,9vw,128px); padding-top:22px; border-top:1px solid var(--rule)}
 .facts-end > div + div{margin-top:0}
 
@@ -395,7 +404,7 @@ html.locked,html.locked body{overflow:hidden}
   .camp .cover{display:none}
   .only-m{display:block}
   .side .note{margin-bottom:18px}
-  .og.big{grid-column:1 / -1} .og.sm{grid-column:span 6}
+  .og-grid{grid-template-columns:1fr; gap:32px}
   .facts-end{grid-template-columns:1fr}
   .top{flex-wrap:wrap}
   .top .right{display:contents}
@@ -727,9 +736,9 @@ html.locked,html.locked body{overflow:hidden}
             <h4 id="tia-og-h"><span class="t" lang="en">Selected promotional and product-led posts.</span><span class="t" lang="ar">منشورات مختارة، ترويجية وقائمة على المنتج.</span></h4>
           </header>
           <div class="og-grid rv" data-group="tia-posts">
-            <figure class="og big"><a class="pp" href="img/tia/post-01.webp" data-media="image" data-en="TIA Fashion · Every angle is style" data-ar="TIA Fashion · Every angle is style"><img src="img/tia/post-01-640.webp" srcset="img/tia/post-01-640.webp 640w, img/tia/post-01.webp 1122w" sizes="(max-width: 820px) 92vw, 46vw" alt="" loading="lazy" decoding="async" width="1122" height="1402"></a><figcaption><span class="ti">Every angle is style</span><span class="sub">Post</span></figcaption></figure>
-            <figure class="og sm"><a class="pp" href="img/tia/post-02.webp" data-media="image" data-en="TIA Fashion · Style of the day" data-ar="TIA Fashion · Style of the day"><img src="img/tia/post-02-640.webp" srcset="img/tia/post-02-640.webp 640w, img/tia/post-02.webp 1122w" sizes="(max-width: 820px) 46vw, 23vw" alt="" loading="lazy" decoding="async" width="1122" height="1402"></a><figcaption><span class="ti">Style of the day</span><span class="sub">Post</span></figcaption></figure>
-            <figure class="og sm"><a class="pp" href="img/tia/post-03.webp" data-media="image" data-en="TIA Fashion · Limited quantity" data-ar="TIA Fashion · Limited quantity"><img src="img/tia/post-03-640.webp" srcset="img/tia/post-03-640.webp 640w, img/tia/post-03.webp 1122w" sizes="(max-width: 820px) 46vw, 23vw" alt="" loading="lazy" decoding="async" width="1122" height="1402"></a><figcaption><span class="ti">Limited quantity</span><span class="sub">Post</span></figcaption></figure>
+            <figure class="og"><a class="pp" href="img/tia/post-01.webp" data-media="image" data-en="TIA Fashion · Every angle is style" data-ar="TIA Fashion · Every angle is style"><img src="img/tia/post-01-640.webp" srcset="img/tia/post-01-640.webp 640w, img/tia/post-01.webp 1122w" sizes="(max-width: 820px) 92vw, 30vw" alt="" loading="lazy" decoding="async" width="1122" height="1402"></a><figcaption><span class="ti">Every angle is style</span><span class="sub">Post</span></figcaption></figure>
+            <figure class="og"><a class="pp" href="img/tia/post-02.webp" data-media="image" data-en="TIA Fashion · Style of the day" data-ar="TIA Fashion · Style of the day"><img src="img/tia/post-02-640.webp" srcset="img/tia/post-02-640.webp 640w, img/tia/post-02.webp 1122w" sizes="(max-width: 820px) 92vw, 30vw" alt="" loading="lazy" decoding="async" width="1122" height="1402"></a><figcaption><span class="ti">Style of the day</span><span class="sub">Post</span></figcaption></figure>
+            <figure class="og"><a class="pp" href="img/tia/post-03.webp" data-media="image" data-en="TIA Fashion · Limited quantity" data-ar="TIA Fashion · Limited quantity"><img src="img/tia/post-03-640.webp" srcset="img/tia/post-03-640.webp 640w, img/tia/post-03.webp 1122w" sizes="(max-width: 820px) 92vw, 30vw" alt="" loading="lazy" decoding="async" width="1122" height="1402"></a><figcaption><span class="ti">Limited quantity</span><span class="sub">Post</span></figcaption></figure>
           </div>
         </section>
         <dl class="facts facts-end rv">
