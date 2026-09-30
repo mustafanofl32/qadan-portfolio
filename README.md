@@ -3,7 +3,7 @@
 Portfolio site for **Mohammed Qadan**, graphic and multimedia designer at Stars Design, Amman, Jordan.
 Selected work presented as four short case studies (CheeZ Khaliya, Essence of Beauty × Slazenger, Al-Qimma Delivery, TIA Fashion), then more reels, posts, 3D/CGI and posters.
 
-- Live: https://mustafanofl32.github.io/qadan-portfolio/
+- Live: https://mohammedqadan.com/
 - Arabic and English (RTL), light and dark themes, mobile-first.
 - Plain HTML, CSS and JavaScript. No build step, no framework.
 
