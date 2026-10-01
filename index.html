@@ -388,6 +388,34 @@ html[dir="rtl"] .og figcaption .ti{background-position:100% 100%}
 }
 .og .pp:active{transform:scale(.985)}
 
+/* ---------- bloomy kids ---------- */
+.bl-feat{display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:28px var(--col); align-items:stretch}
+.bl-main .fr{background:#0E100C}
+.bl-main .play{width:60px; height:60px; bottom:16px; inset-inline-start:16px}
+.bl-main .play svg{width:22px; height:22px}
+.bl-main .dur{bottom:33px; inset-inline-end:16px}
+.bl-side{display:flex; flex-direction:column; justify-content:space-between; gap:clamp(36px,4vw,56px); min-width:0}
+.bl-facts{position:static; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px clamp(20px,2.6vw,36px)}
+.bl-facts > div + div{margin-top:0}
+.bl-tour{display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:clamp(20px,2.6vw,36px); align-items:end; padding-top:22px; border-top:1px solid var(--rule)}
+.bl-tour .fr{background:#0E100C}
+.bl-note p:not(.kicker){margin-top:12px; color:var(--muted); font-size:15.5px; line-height:1.62; max-width:34ch}
+html[lang="ar"] .bl-note p:not(.kicker){line-height:1.85}
+.bl-camp{margin-top:clamp(96px,10vw,144px)}
+#bloomy .ongoing{margin-top:clamp(96px,10vw,144px)}
+@media (max-width:820px){
+  .bl-feat{grid-template-columns:1fr}
+  .bl-main{max-width:420px; width:100%; justify-self:center}
+}
+@media (max-width:479px){
+  .bl-facts{grid-template-columns:1fr}
+  .bl-tour{grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start}
+}
+@media (min-width:1001px){ .index{grid-template-columns:repeat(5,minmax(0,1fr))} }
+@media (max-width:1000px){
+  .index > li:last-child:nth-child(odd){grid-column:1 / -1}
+  .index > li:last-child:nth-child(odd) .th{aspect-ratio:16/9}
+}
 /* ---------- blender ---------- */
 .b3 .jrow + .mg-label{margin-top:clamp(28px,3.2vw,44px)}
 .mg-label.proc::after{height:0; background:none; border-top:1px dashed var(--faint)}
@@ -712,13 +740,14 @@ html.locked,html.locked body{overflow:hidden}
     <section class="sec first" id="work" aria-labelledby="work-h">
       <div class="sec-head rv">
         <h2 id="work-h"><span class="t" lang="en">Selected work</span><span class="t" lang="ar">أعمال مختارة</span></h2>
-        <p><span class="t" lang="en">Four client projects, each taken from the concept to the published campaign.</span><span class="t" lang="ar">أربعة مشاريع لعملاء، نفّذت كلًّا منها من الفكرة حتى الحملة المنشورة.</span></p>
+        <p><span class="t" lang="en">Five client projects, each taken from the concept to the published campaign.</span><span class="t" lang="ar">خمسة مشاريع لعملاء، نفّذت كلًّا منها من الفكرة حتى الحملة المنشورة.</span></p>
       </div>
       <ol class="index rv">
         <li><a href="#cheez"><div class="th"><img class="lz" data-src="img/thumb/kv-treasure.webp" alt="" decoding="async" width="600" height="1067" style="object-position:50% 42%"><noscript><img src="img/thumb/kv-treasure.webp" alt="" loading="lazy" width="600" height="1067" style="object-position:50% 42%"></noscript></div><div class="meta"><span class="no">01</span><span class="cl"><span class="t" lang="en">CheeZ Khaliya</span><span class="t" lang="ar">خلية CheeZ</span></span><span class="ds"><span class="t" lang="en">Brand and social content</span><span class="t" lang="ar">هوية ومحتوى سوشال ميديا</span></span></div></a></li>
         <li><a href="#slazenger"><div class="th"><img class="lz" data-src="img/slazenger/volcano-01-640.webp" alt="" decoding="async" width="640" height="800"><noscript><img src="img/slazenger/volcano-01-640.webp" alt="" loading="lazy" width="640" height="800"></noscript></div><div class="meta"><span class="no">02</span><span class="cl"><span class="t" lang="en">Essence of Beauty × Slazenger</span><span class="t" lang="ar">إسنس أوف بيوتي × سلازنجر</span></span><span class="ds"><span class="t" lang="en">Reel campaign</span><span class="t" lang="ar">حملة ريلز</span></span></div></a></li>
         <li><a href="#tia"><div class="th"><img class="lz" data-src="img/thumb/tia-countdown.webp" alt="" decoding="async" width="600" height="750"><noscript><img src="img/thumb/tia-countdown.webp" alt="" loading="lazy" width="600" height="750"></noscript></div><div class="meta"><span class="no">03</span><span class="cl">TIA Fashion</span><span class="ds"><span class="t" lang="en">Launch and social content</span><span class="t" lang="ar">الإطلاق ومحتوى السوشال</span></span></div></a></li>
         <li><a href="#qimma"><div class="th"><img class="lz" data-src="img/thumb/qimma-map.webp" alt="" decoding="async" width="600" height="750"><noscript><img src="img/thumb/qimma-map.webp" alt="" loading="lazy" width="600" height="750"></noscript></div><div class="meta"><span class="no">04</span><span class="cl"><span class="t" lang="en">Al-Qimma Delivery</span><span class="t" lang="ar">القمة للتوصيل</span></span><span class="ds"><span class="t" lang="en">Delivery campaign</span><span class="t" lang="ar">حملة توصيل</span></span></div></a></li>
+        <li><a href="#bloomy"><div class="th"><img class="lz" data-src="media/v09-poster.webp" alt="" decoding="async" width="720" height="1280" style="object-position:50% 55%"><noscript><img src="media/v09-poster.webp" alt="" loading="lazy" width="720" height="1280" style="object-position:50% 55%"></noscript></div><div class="meta"><span class="no">05</span><span class="cl"><span class="t" lang="en">Bloomy Kids</span><span class="t" lang="ar">بلومي كيدز</span></span><span class="ds"><span class="t" lang="en">Reel and social content</span><span class="t" lang="ar">ريل ومحتوى سوشال</span></span></div></a></li>
       </ol>
 
       <!-- 01 CHEEZ -->
@@ -998,6 +1027,74 @@ html.locked,html.locked body{overflow:hidden}
           </div>
         </div>
       </article>
+
+      <!-- 05 BLOOMY KIDS -->
+      <article class="case" id="bloomy" aria-labelledby="bloomy-h">
+        <header class="case-head rv">
+          <div>
+            <span class="no">05</span>
+            <h3 id="bloomy-h"><span class="t" lang="en">Bloomy Kids</span><span class="t" lang="ar">بلومي كيدز</span></h3>
+            <p class="sub"><span class="t" lang="en">Nawat Al-Mustaqbal Nursery · reel and social content</span><span class="t" lang="ar">حضانة نواة المستقبل · ريل ومحتوى سوشال ميديا</span></p>
+          </div>
+          <p class="lede"><span class="t" lang="en">A storybook that opens into the nursery, then the real rooms, one by one.</span><span class="t" lang="ar">كتاب قصص يُفتح على الحضانة، ثم الغرف الحقيقية، واحدة تلو الأخرى.</span></p>
+        </header>
+        <div class="bl-feat" data-group="bloomy-reels">
+          <figure class="m bl-main rv"><a class="fr r916" href="media/v09.mp4" data-media="video" data-poster="media/v09-poster.webp" data-en="Bloomy Kids · Pop-up storybook reel" data-ar="بلومي كيدز · ريل كتاب القصص المجسّم"><img src="media/v09-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:58</span></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Pop-up storybook</span><span class="t" lang="ar">كتاب القصص المجسّم</span></span><span class="sub"><span class="t" lang="en">Main reel</span><span class="t" lang="ar">الريل الرئيسي</span></span></figcaption></figure>
+          <div class="bl-side">
+            <dl class="facts bl-facts rv">
+            <div><dt><span class="t" lang="en">Objective</span><span class="t" lang="ar">الهدف</span></dt>
+            <dd><span class="t" lang="en">Show parents the nursery and its care, and bring them to book a free trial for their child.</span><span class="t" lang="ar">تعريف الأهالي بالحضانة وبمستوى الرعاية فيها، ودعوتهم لحجز تجربة مجانية لطفلهم.</span></dd></div>
+            <div><dt><span class="t" lang="en">Idea</span><span class="t" lang="ar">الفكرة</span></dt>
+            <dd><span class="t" lang="en">The reel opens a Bloomy Kids storybook whose pages pop up into the nursery: the gate, the nap room, story time and the playground. The posts then show the same spaces in real photos, inside the soft pastel frame of the brand.</span><span class="t" lang="ar">الريل يفتح كتاب قصص Bloomy Kids، وصفحاته تنبثق لتصبح الحضانة: البوابة، وغرفة النوم، ووقت القصة، وساحة اللعب. ثم تعرض المنشورات الأماكن نفسها بصور حقيقية، داخل إطار العلامة بألوانه الناعمة.</span></dd></div>
+            <div><dt><span class="t" lang="en">My role</span><span class="t" lang="ar">دوري</span></dt>
+            <dd><span class="t" lang="en">Concept, design and editing.</span><span class="t" lang="ar">الفكرة والتصميم والمونتاج.</span></dd></div>
+            <div><dt><span class="t" lang="en">Deliverables</span><span class="t" lang="ar">المخرجات</span></dt>
+            <dd><span class="t" lang="en">Two reels · six-slide carousel · three posts</span><span class="t" lang="ar">ريلزان · كاروسيل من ست شرائح · ثلاثة منشورات</span></dd></div>
+          </dl>
+            <div class="bl-tour rv">
+              <figure class="m"><a class="fr r916" href="media/v18.mp4" data-media="video" data-poster="media/v18-poster.webp" data-en="Bloomy Kids · Inside the nursery reel" data-ar="بلومي كيدز · ريل جولة في الحضانة"><img src="media/v18-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:39</span></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Inside the nursery</span><span class="t" lang="ar">جولة في الحضانة</span></span><span class="sub"><span class="t" lang="en">Reel</span><span class="t" lang="ar">ريل</span></span></figcaption></figure>
+              <div class="bl-note">
+                <p class="kicker"><span class="t" lang="en">Second reel</span><span class="t" lang="ar">الريل الثاني</span></p>
+                <p><span class="t" lang="en">The real nursery after the storybook: the yard, the baby room and the classrooms, with animated icons for the online cameras, smart entry and opening hours, ending on the sign-up card.</span><span class="t" lang="ar">الحضانة الحقيقية بعد كتاب القصص: الساحة، وغرفة الرضّع، والصفوف، مع أيقونات متحركة للكاميرات أونلاين والدخول الذكي وساعات الدوام، وتنتهي ببطاقة التسجيل.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="camp bl-camp rv" data-group="bloomy-rooms" id="bloomy-c1">
+            <div class="cover"><figure class="slide"><a class="pp" href="img/bloomy/cr-01.webp" data-media="image" data-en="Bloomy Kids · The nursery, room by room · Cover" data-ar="بلومي كيدز · الحضانة ركنًا ركنًا · الغلاف"><img src="img/bloomy/cr-01-640.webp" srcset="img/bloomy/cr-01-640.webp 640w, img/bloomy/cr-01.webp 1080w" sizes="(max-width: 820px) 92vw, 52vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Cover</span><span class="t" lang="ar">الغلاف</span></span><span class="sub">01</span></figcaption></figure></div>
+            <div class="side">
+              <p class="lbl"><span class="t" lang="en">Carousel</span><span class="t" lang="ar">كاروسيل</span></p>
+              <h5 class="c-title"><span class="t" lang="en">The nursery, room by room</span><span class="t" lang="ar">الحضانة ركنًا ركنًا</span></h5>
+              <p class="note"><span class="t" lang="en">A cover, then one slide for each space: the outdoor yard, the activity corner, the learning room, the indoor games and the trampoline room, ending on the free-trial offer.</span><span class="t" lang="ar">غلاف، ثم شريحة لكل مكان: الساحة الخارجية، وركن النشاط، وغرفة التعلّم، والألعاب الداخلية، وغرفة الترامبولين، وتنتهي بعرض التجربة المجانية.</span></p>
+              <p class="meta"><span class="t" lang="en">Carousel · 6 slides</span><span class="t" lang="ar">كاروسيل · 6 شرائح</span></p>
+              <div class="slider">
+                <div class="track" tabindex="0" role="group" aria-label="Bloomy Kids carousel slides">
+                  <figure class="slide only-m"><a class="pp" href="img/bloomy/cr-01.webp" data-media="image" data-en="Bloomy Kids · The nursery, room by room · Cover" data-ar="بلومي كيدز · الحضانة ركنًا ركنًا · الغلاف"><img src="img/bloomy/cr-01-640.webp" srcset="img/bloomy/cr-01-640.webp 640w, img/bloomy/cr-01.webp 1080w" sizes="(max-width: 820px) 92vw, 36vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Cover</span><span class="t" lang="ar">الغلاف</span></span><span class="sub">01</span></figcaption></figure>
+                  <figure class="slide"><a class="pp" href="img/bloomy/cr-02.webp" data-media="image" data-en="Bloomy Kids · The nursery, room by room · Outdoor yard" data-ar="بلومي كيدز · الحضانة ركنًا ركنًا · الساحة الخارجية"><img src="img/bloomy/cr-02-640.webp" srcset="img/bloomy/cr-02-640.webp 640w, img/bloomy/cr-02.webp 1080w" sizes="(max-width: 820px) 92vw, 36vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Outdoor yard</span><span class="t" lang="ar">الساحة الخارجية</span></span><span class="sub">02</span></figcaption></figure>
+                  <figure class="slide"><a class="pp" href="img/bloomy/cr-03.webp" data-media="image" data-en="Bloomy Kids · The nursery, room by room · Activity and movement" data-ar="بلومي كيدز · الحضانة ركنًا ركنًا · نشاط وحركة"><img src="img/bloomy/cr-03-640.webp" srcset="img/bloomy/cr-03-640.webp 640w, img/bloomy/cr-03.webp 1080w" sizes="(max-width: 820px) 92vw, 36vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Activity and movement</span><span class="t" lang="ar">نشاط وحركة</span></span><span class="sub">03</span></figcaption></figure>
+                  <figure class="slide"><a class="pp" href="img/bloomy/cr-04.webp" data-media="image" data-en="Bloomy Kids · The nursery, room by room · Learning and play" data-ar="بلومي كيدز · الحضانة ركنًا ركنًا · التعلّم والتفاعل"><img src="img/bloomy/cr-04-640.webp" srcset="img/bloomy/cr-04-640.webp 640w, img/bloomy/cr-04.webp 1080w" sizes="(max-width: 820px) 92vw, 36vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Learning and play</span><span class="t" lang="ar">التعلّم والتفاعل</span></span><span class="sub">04</span></figcaption></figure>
+                  <figure class="slide"><a class="pp" href="img/bloomy/cr-05.webp" data-media="image" data-en="Bloomy Kids · The nursery, room by room · Indoor games" data-ar="بلومي كيدز · الحضانة ركنًا ركنًا · الألعاب الداخلية"><img src="img/bloomy/cr-05-640.webp" srcset="img/bloomy/cr-05-640.webp 640w, img/bloomy/cr-05.webp 1080w" sizes="(max-width: 820px) 92vw, 36vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Indoor games</span><span class="t" lang="ar">الألعاب الداخلية</span></span><span class="sub">05</span></figcaption></figure>
+                  <figure class="slide"><a class="pp" href="img/bloomy/cr-06.webp" data-media="image" data-en="Bloomy Kids · The nursery, room by room · Trampoline and ball pit" data-ar="بلومي كيدز · الحضانة ركنًا ركنًا · ترامبولين وحوض كرات"><img src="img/bloomy/cr-06-640.webp" srcset="img/bloomy/cr-06-640.webp 640w, img/bloomy/cr-06.webp 1080w" sizes="(max-width: 820px) 92vw, 36vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Trampoline and ball pit</span><span class="t" lang="ar">ترامبولين وحوض كرات</span></span><span class="sub">06</span></figcaption></figure>
+                </div>
+                <div class="ctrl"><button type="button" class="s-prev" aria-label="Previous slide"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button><span class="count" dir="ltr" aria-live="polite"></span><button type="button" class="s-next" aria-label="Next slide"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button><span class="prog" aria-hidden="true"><i></i></span></div>
+              </div>
+            </div>
+          </div>
+
+        <section class="ongoing" id="bloomy-og" aria-labelledby="bloomy-og-h">
+          <header class="sub-head small rv">
+            <p class="kicker"><span class="t" lang="en">Posts</span><span class="t" lang="ar">المنشورات</span></p>
+            <h4 id="bloomy-og-h"><span class="t" lang="en">Real moments from the nursery, and the reasons parents can trust it.</span><span class="t" lang="ar">لحظات حقيقية من الحضانة، وأسباب تجعل الأهالي يطمئنون لها.</span></h4>
+          </header>
+          <div class="og-grid rv" data-group="bloomy-posts">
+            <figure class="og"><a class="pp" href="img/bloomy/post-01.webp" data-media="image" data-en="Bloomy Kids · Every day, a new joy" data-ar="بلومي كيدز · كل يوم… فرحة جديدة"><img src="img/bloomy/post-01-640.webp" srcset="img/bloomy/post-01-640.webp 640w, img/bloomy/post-01.webp 1080w" sizes="(max-width: 820px) 92vw, 30vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Every day, a new joy</span><span class="t" lang="ar">كل يوم… فرحة جديدة</span></span><span class="sub"><span class="t" lang="en">Post</span><span class="t" lang="ar">منشور</span></span></figcaption></figure>
+            <figure class="og"><a class="pp" href="img/bloomy/post-02.webp" data-media="image" data-en="Bloomy Kids · Small days, growing memories" data-ar="بلومي كيدز · أيام صغيرة… وذكريات تكبر معهم"><img src="img/bloomy/post-02-640.webp" srcset="img/bloomy/post-02-640.webp 640w, img/bloomy/post-02.webp 1080w" sizes="(max-width: 820px) 92vw, 30vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Small days, growing memories</span><span class="t" lang="ar">أيام صغيرة… وذكريات تكبر معهم</span></span><span class="sub"><span class="t" lang="en">Post</span><span class="t" lang="ar">منشور</span></span></figcaption></figure>
+            <figure class="og"><a class="pp" href="img/bloomy/post-03.webp" data-media="image" data-en="Bloomy Kids · Care you can trust" data-ar="بلومي كيدز · رعاية تطمئنكم"><img src="img/bloomy/post-03-640.webp" srcset="img/bloomy/post-03-640.webp 640w, img/bloomy/post-03.webp 1080w" sizes="(max-width: 820px) 92vw, 30vw" alt="" loading="lazy" decoding="async" width="1080" height="1350"></a><figcaption><span class="ti"><span class="t" lang="en">Care you can trust</span><span class="t" lang="ar">رعاية تطمئنكم</span></span><span class="sub"><span class="t" lang="en">Post</span><span class="t" lang="ar">منشور</span></span></figcaption></figure>
+          </div>
+        </section>
+      </article>
     </section>
 
     <!-- BLENDER -->
@@ -1103,7 +1200,7 @@ html.locked,html.locked body{overflow:hidden}
     <section class="sec" id="more" aria-labelledby="more-h">
       <div class="sec-head rv">
         <h2 id="more-h"><span class="t" lang="en">More work</span><span class="t" lang="ar">أعمال أخرى</span></h2>
-        <p><span class="t" lang="en">Other pieces: posters, a website design and a reel for a childcare centre.</span><span class="t" lang="ar">أعمال أخرى: ملصقات، وتصميم موقع، وريل لحضانة أطفال.</span></p>
+        <p><span class="t" lang="en">Other pieces: posters, photo retouching and a website design.</span><span class="t" lang="ar">أعمال أخرى: ملصقات، وريتاتش صور، وتصميم موقع.</span></p>
       </div>
       <div class="jrows rv" data-group="more">
         <div class="jrow">
@@ -1111,8 +1208,6 @@ html.locked,html.locked body{overflow:hidden}
               <figcaption><span class="ti">Matrix Cola</span><span class="sub"><span class="t" lang="en">Poster</span><span class="t" lang="ar">ملصق</span></span></figcaption></figure>
           <figure class="m" style="--ar:1.4995"><a class="fr" href="img/work-dispersion.webp" data-media="image" data-en="The best chance · photo manipulation" data-ar="The best chance · معالجة صور"><img src="img/work-dispersion.webp" alt="" loading="lazy" width="1600" height="1067"></a>
               <figcaption><span class="ti">The best chance</span><span class="sub"><span class="t" lang="en">Photoshop · retouching</span><span class="t" lang="ar">فوتوشوب · ريتاتش</span></span></figcaption></figure>
-          <figure class="m" style="--ar:0.5625"><a class="fr r916" href="media/v09.mp4" data-media="video" data-poster="media/v09-poster.webp" data-en="Childcare centre · Pop-up storybook" data-ar="حضانة أطفال · كتاب القصص المجسّم"><img src="media/v09-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:58</span></a>
-              <figcaption><span class="ti"><span class="t" lang="en">Pop-up storybook</span><span class="t" lang="ar">كتاب القصص المجسّم</span></span><span class="sub"><span class="t" lang="en">Childcare centre · reel</span><span class="t" lang="ar">حضانة أطفال · ريل</span></span></figcaption></figure>
           <figure class="m" style="--ar:0.4653"><a class="fr" href="img/gym-home.webp" data-media="image" data-en="Vy Health Club · website home page" data-ar="Vy Health Club · الصفحة الرئيسية للموقع"><img src="img/gym-home.webp" alt="" loading="lazy" width="1000" height="2149"></a>
               <figcaption><span class="ti">Vy Health Club</span><span class="sub"><span class="t" lang="en">Website design</span><span class="t" lang="ar">تصميم موقع</span></span></figcaption></figure>
         </div>
