@@ -28,6 +28,15 @@
   (function () {
     var d = document.documentElement;
     d.classList.add('js');
+    // a refresh always starts at the top: no restored scroll, and drop a #section left in the address
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    try {
+      var nav = performance.getEntriesByType('navigation')[0];
+      if (nav && nav.type === 'reload') {
+        if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+        window.addEventListener('load', function () { window.scrollTo(0, 0); });
+      }
+    } catch (e) {}
     try {
       var t = localStorage.getItem('mq-theme2'); if (t) d.setAttribute('data-theme', t);
       var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('mq-lang');
