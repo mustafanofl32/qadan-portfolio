@@ -388,6 +388,16 @@ html[dir="rtl"] .og figcaption .ti{background-position:100% 100%}
 }
 .og .pp:active{transform:scale(.985)}
 
+/* ---------- blender ---------- */
+.b3 .jrow + .mg-label{margin-top:clamp(28px,3.2vw,44px)}
+.mg-label.proc::after{height:0; background:none; border-top:1px dashed var(--faint)}
+.b3 .jrow.proc .fr{border:1px solid var(--rule)}
+.b3 .jrow.proc figcaption .sub{display:none}
+@media (max-width:600px){
+  .b3 .jrow.quad,.b3 .jrow.proc{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px var(--gap)}
+  .b3 .jrow.quad > .m + .m,.b3 .jrow.proc > .m + .m{margin-top:0}
+  .b3 figcaption{flex-direction:column; gap:1px}
+}
 /* ---------- more work ---------- */
 .masonry{columns:3 260px; column-gap:var(--gap)}
 
@@ -990,25 +1000,115 @@ html.locked,html.locked body{overflow:hidden}
       </article>
     </section>
 
+    <!-- BLENDER -->
+    <section class="sec" id="blender" aria-labelledby="blender-h">
+      <div class="sec-head rv">
+        <h2 id="blender-h"><span class="t" lang="en">3D in Blender</span><span class="t" lang="ar">أعمال Blender</span></h2>
+        <p><span class="t" lang="en">Three pieces built in Blender. Each one shows the final video, the stills and the scene while it was being built.</span><span class="t" lang="ar">ثلاثة أعمال نفّذتها على Blender. لكلٍّ منها الفيديو النهائي والصور، والمشهد أثناء العمل.</span></p>
+      </div>
+
+      <article class="case b3" id="b3-cgi" aria-labelledby="b3-cgi-h">
+        <header class="case-head rv">
+          <div>
+            <span class="no">01</span>
+            <h3 id="b3-cgi-h"><span class="t" lang="en">Logo on the skyline</span><span class="t" lang="ar">الشعار على الأفق</span></h3>
+            <p class="sub"><span class="t" lang="en">Stars Design · CGI ad</span><span class="t" lang="ar">ستارز ديزاين · إعلان CGI</span></p>
+          </div>
+          <p class="lede"><span class="t" lang="en">The Stars Design logo, built in Blender and set into a panel on a real tower.</span><span class="t" lang="ar">شعار ستارز ديزاين، بنيته على Blender ووضعته داخل لوحة على برج حقيقي.</span></p>
+        </header>
+        <div class="rv" data-group="b3-cgi">
+          <p class="mg-label"><span class="t" lang="en">Video and frames</span><span class="t" lang="ar">الفيديو واللقطات</span></p>
+          <div class="jrow quad">
+            <figure class="m" style="--ar:0.5625"><a class="fr r916" href="media/blender/cgi.mp4" data-media="video" data-poster="media/blender/cgi-poster.webp" data-en="Stars Design · CGI ad" data-ar="ستارز ديزاين · إعلان CGI"><img src="media/blender/cgi-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:17</span></a>
+              <figcaption><span class="ti"><span class="t" lang="en">CGI ad</span><span class="t" lang="ar">إعلان CGI</span></span><span class="sub"><span class="t" lang="en">Video</span><span class="t" lang="ar">فيديو</span></span></figcaption></figure>
+            <figure class="m" style="--ar:0.5625"><a class="fr" href="img/blender/cgi-frame-a.webp" data-media="image" data-en="Stars Design · CGI ad, the empty panel" data-ar="ستارز ديزاين · إعلان CGI، اللوحة فارغة"><img src="img/blender/cgi-frame-a-600.webp" srcset="img/blender/cgi-frame-a-600.webp 600w, img/blender/cgi-frame-a.webp 900w" sizes="(max-width: 600px) 46vw, 24vw" alt="" loading="lazy" decoding="async" width="900" height="1600"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">The empty panel</span><span class="t" lang="ar">اللوحة فارغة</span></span><span class="sub"><span class="t" lang="en">Frame</span><span class="t" lang="ar">لقطة</span></span></figcaption></figure>
+            <figure class="m" style="--ar:0.5625"><a class="fr" href="img/blender/cgi-frame-b.webp" data-media="image" data-en="Stars Design · CGI ad, the logo appears" data-ar="ستارز ديزاين · إعلان CGI، ظهور الشعار"><img src="img/blender/cgi-frame-b-600.webp" srcset="img/blender/cgi-frame-b-600.webp 600w, img/blender/cgi-frame-b.webp 900w" sizes="(max-width: 600px) 46vw, 24vw" alt="" loading="lazy" decoding="async" width="900" height="1600"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">The logo appears</span><span class="t" lang="ar">ظهور الشعار</span></span><span class="sub"><span class="t" lang="en">Frame</span><span class="t" lang="ar">لقطة</span></span></figcaption></figure>
+            <figure class="m" style="--ar:0.5637"><a class="fr" href="img/blender/cgi-final.webp" data-media="image" data-en="Stars Design · CGI ad, final frame" data-ar="ستارز ديزاين · إعلان CGI، اللقطة الأخيرة"><img src="img/blender/cgi-final-600.webp" srcset="img/blender/cgi-final-600.webp 600w, img/blender/cgi-final.webp 1000w" sizes="(max-width: 600px) 46vw, 24vw" alt="" loading="lazy" decoding="async" width="1000" height="1774"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Final frame</span><span class="t" lang="ar">اللقطة الأخيرة</span></span><span class="sub"><span class="t" lang="en">Frame</span><span class="t" lang="ar">لقطة</span></span></figcaption></figure>
+          </div>
+          <p class="mg-label proc"><span class="t" lang="en">From the process</span><span class="t" lang="ar">من مراحل التنفيذ</span></p>
+          <div class="jrow proc">
+            <figure class="m" style="--ar:1.9025"><a class="fr" href="img/blender/cgi-process-1.webp" data-media="image" data-en="Process · Camera tracking in Blender" data-ar="من مراحل التنفيذ · تتبّع حركة الكاميرا على Blender"><img src="img/blender/cgi-process-1-800.webp" srcset="img/blender/cgi-process-1-800.webp 800w, img/blender/cgi-process-1.webp 1600w" sizes="(max-width: 600px) 46vw, 32vw" alt="" loading="lazy" decoding="async" width="1600" height="841"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Camera tracking</span><span class="t" lang="ar">تتبّع حركة الكاميرا</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+            <figure class="m" style="--ar:1.9025"><a class="fr" href="img/blender/cgi-process-2.webp" data-media="image" data-en="Process · Placing the logo on the tower" data-ar="من مراحل التنفيذ · تركيب الشعار على البرج"><img src="img/blender/cgi-process-2-800.webp" srcset="img/blender/cgi-process-2-800.webp 800w, img/blender/cgi-process-2.webp 1600w" sizes="(max-width: 600px) 46vw, 32vw" alt="" loading="lazy" decoding="async" width="1600" height="841"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Placing the logo</span><span class="t" lang="ar">تركيب الشعار</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+            <figure class="m" style="--ar:1.9025"><a class="fr" href="img/blender/cgi-process-3.webp" data-media="image" data-en="Process · Building the Stars Design logo in Blender" data-ar="من مراحل التنفيذ · بناء شعار ستارز ديزاين على Blender"><img src="img/blender/cgi-process-3-800.webp" srcset="img/blender/cgi-process-3-800.webp 800w, img/blender/cgi-process-3.webp 1600w" sizes="(max-width: 600px) 46vw, 32vw" alt="" loading="lazy" decoding="async" width="1600" height="841"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Building the logo</span><span class="t" lang="ar">بناء الشعار</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="case b3" id="b3-night" aria-labelledby="b3-night-h">
+        <header class="case-head rv">
+          <div>
+            <span class="no">02</span>
+            <h3 id="b3-night-h"><span class="t" lang="en">Night Rain</span><span class="t" lang="ar">ليلة ماطرة</span></h3>
+            <p class="sub"><span class="t" lang="en">Personal work · environment</span><span class="t" lang="ar">عمل شخصي · بيئة</span></p>
+          </div>
+          <p class="lede"><span class="t" lang="en">A wet stone alley at night under warm lamps, with a small hedgehog I sculpted.</span><span class="t" lang="ar">زقاق حجري مبلّل في الليل تحت مصابيح دافئة، وفيه قنفذ صغير نحتّه بنفسي.</span></p>
+        </header>
+        <div class="rv" data-group="b3-night">
+          <p class="mg-label"><span class="t" lang="en">Video and render</span><span class="t" lang="ar">الفيديو والرندر</span></p>
+          <div class="jrow">
+            <figure class="m" style="--ar:1.7778"><a class="fr" href="media/blender/night.mp4" data-media="video" data-poster="media/blender/night-poster.webp" data-en="Night Rain · video" data-ar="ليلة ماطرة · فيديو"><img src="media/blender/night-poster.webp" alt="" loading="lazy" width="1280" height="720"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:18</span></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Night Rain</span><span class="t" lang="ar">ليلة ماطرة</span></span><span class="sub"><span class="t" lang="en">Video</span><span class="t" lang="ar">فيديو</span></span></figcaption></figure>
+            <figure class="m" style="--ar:1.7778"><a class="fr" href="img/blender/night-final.webp" data-media="image" data-en="Night Rain · final render" data-ar="ليلة ماطرة · الرندر النهائي"><img src="img/blender/night-final-800.webp" srcset="img/blender/night-final-800.webp 800w, img/blender/night-final.webp 1600w" sizes="(max-width: 600px) 92vw, 48vw" alt="" loading="lazy" decoding="async" width="1600" height="900"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Final render</span><span class="t" lang="ar">الرندر النهائي</span></span><span class="sub"><span class="t" lang="en">Render</span><span class="t" lang="ar">رندر</span></span></figcaption></figure>
+          </div>
+          <p class="mg-label proc"><span class="t" lang="en">From the process</span><span class="t" lang="ar">من مراحل التنفيذ</span></p>
+          <div class="jrow proc">
+            <figure class="m" style="--ar:2.1641"><a class="fr" href="img/blender/night-process-1.webp" data-media="image" data-en="Process · Sculpting the hedgehog in Blender" data-ar="من مراحل التنفيذ · نحت القنفذ على Blender"><img src="img/blender/night-process-1-800.webp" srcset="img/blender/night-process-1-800.webp 800w, img/blender/night-process-1.webp 1556w" sizes="(max-width: 600px) 92vw, 48vw" alt="" loading="lazy" decoding="async" width="1556" height="719"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Sculpting the hedgehog</span><span class="t" lang="ar">نحت القنفذ</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+            <figure class="m" style="--ar:2.199"><a class="fr" href="img/blender/night-process-2.webp" data-media="image" data-en="Process · Shader nodes in Blender" data-ar="من مراحل التنفيذ · عُقد الخامات على Blender"><img src="img/blender/night-process-2-800.webp" srcset="img/blender/night-process-2-800.webp 800w, img/blender/night-process-2.webp 1293w" sizes="(max-width: 600px) 92vw, 48vw" alt="" loading="lazy" decoding="async" width="1293" height="588"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Shader nodes</span><span class="t" lang="ar">عُقد الخامات</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="case b3" id="b3-donuts" aria-labelledby="b3-donuts-h">
+        <header class="case-head rv">
+          <div>
+            <span class="no">03</span>
+            <h3 id="b3-donuts-h"><span class="t" lang="en">Donuts</span><span class="t" lang="ar">دونات</span></h3>
+            <p class="sub"><span class="t" lang="en">Personal work · product scene</span><span class="t" lang="ar">عمل شخصي · مشهد منتج</span></p>
+          </div>
+          <p class="lede"><span class="t" lang="en">A stack of glazed donuts, from the first model to the final render.</span><span class="t" lang="ar">كومة دونات مغطّاة بالكريمة، من أول نموذج حتى الرندر النهائي.</span></p>
+        </header>
+        <div class="rv" data-group="b3-donuts">
+          <p class="mg-label"><span class="t" lang="en">Video and render</span><span class="t" lang="ar">الفيديو والرندر</span></p>
+          <div class="jrow">
+            <figure class="m" style="--ar:1.7778"><a class="fr" href="media/blender/donuts.mp4" data-media="video" data-poster="media/blender/donuts-poster.webp" data-en="Donuts · video" data-ar="دونات · فيديو"><img src="media/blender/donuts-poster.webp" alt="" loading="lazy" width="1280" height="720"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:08</span></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Donuts</span><span class="t" lang="ar">دونات</span></span><span class="sub"><span class="t" lang="en">Video</span><span class="t" lang="ar">فيديو</span></span></figcaption></figure>
+            <figure class="m" style="--ar:1.7778"><a class="fr" href="img/blender/donuts-final.webp" data-media="image" data-en="Donuts · final render" data-ar="دونات · الرندر النهائي"><img src="img/blender/donuts-final-800.webp" srcset="img/blender/donuts-final-800.webp 800w, img/blender/donuts-final.webp 1600w" sizes="(max-width: 600px) 92vw, 48vw" alt="" loading="lazy" decoding="async" width="1600" height="900"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Final render</span><span class="t" lang="ar">الرندر النهائي</span></span><span class="sub"><span class="t" lang="en">Render</span><span class="t" lang="ar">رندر</span></span></figcaption></figure>
+          </div>
+          <p class="mg-label proc"><span class="t" lang="en">From the process</span><span class="t" lang="ar">من مراحل التنفيذ</span></p>
+          <div class="jrow proc">
+            <figure class="m" style="--ar:1.8868"><a class="fr" href="img/blender/donuts-process-1.webp" data-media="image" data-en="Process · Modelling in Blender" data-ar="من مراحل التنفيذ · النمذجة على Blender"><img src="img/blender/donuts-process-1-800.webp" srcset="img/blender/donuts-process-1-800.webp 800w, img/blender/donuts-process-1.webp 1600w" sizes="(max-width: 600px) 46vw, 24vw" alt="" loading="lazy" decoding="async" width="1600" height="848"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Modelling</span><span class="t" lang="ar">النمذجة</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+            <figure class="m" style="--ar:1.8868"><a class="fr" href="img/blender/donuts-process-2.webp" data-media="image" data-en="Process · Wireframe view in Blender" data-ar="من مراحل التنفيذ · عرض الشبكة على Blender"><img src="img/blender/donuts-process-2-800.webp" srcset="img/blender/donuts-process-2-800.webp 800w, img/blender/donuts-process-2.webp 1600w" sizes="(max-width: 600px) 46vw, 24vw" alt="" loading="lazy" decoding="async" width="1600" height="848"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Wireframe view</span><span class="t" lang="ar">عرض الشبكة</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+            <figure class="m" style="--ar:1.8868"><a class="fr" href="img/blender/donuts-process-3.webp" data-media="image" data-en="Process · Material preview in Blender" data-ar="من مراحل التنفيذ · معاينة الخامات على Blender"><img src="img/blender/donuts-process-3-800.webp" srcset="img/blender/donuts-process-3-800.webp 800w, img/blender/donuts-process-3.webp 1600w" sizes="(max-width: 600px) 46vw, 24vw" alt="" loading="lazy" decoding="async" width="1600" height="848"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Material preview</span><span class="t" lang="ar">معاينة الخامات</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+            <figure class="m" style="--ar:1.8868"><a class="fr" href="img/blender/donuts-process-4.webp" data-media="image" data-en="Process · Shader nodes in Blender" data-ar="من مراحل التنفيذ · عُقد الخامات على Blender"><img src="img/blender/donuts-process-4-800.webp" srcset="img/blender/donuts-process-4-800.webp 800w, img/blender/donuts-process-4.webp 1600w" sizes="(max-width: 600px) 46vw, 24vw" alt="" loading="lazy" decoding="async" width="1600" height="848"></a>
+              <figcaption><span class="ti"><span class="t" lang="en">Shader nodes</span><span class="t" lang="ar">عُقد الخامات</span></span><span class="sub"><span class="t" lang="en">Blender</span><span class="t" lang="ar">Blender</span></span></figcaption></figure>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <!-- MORE WORK -->
     <section class="sec" id="more" aria-labelledby="more-h">
       <div class="sec-head rv">
         <h2 id="more-h"><span class="t" lang="en">More work</span><span class="t" lang="ar">أعمال أخرى</span></h2>
-        <p><span class="t" lang="en">Work outside the four projects above: posters, 3D and CGI, a website design and a reel for a childcare centre.</span><span class="t" lang="ar">أعمال خارج المشاريع الأربعة أعلاه: ملصقات، وأعمال ثلاثية الأبعاد وCGI، وتصميم موقع، وريل لحضانة أطفال.</span></p>
+        <p><span class="t" lang="en">Other pieces: posters, a website design and a reel for a childcare centre.</span><span class="t" lang="ar">أعمال أخرى: ملصقات، وتصميم موقع، وريل لحضانة أطفال.</span></p>
       </div>
       <div class="jrows rv" data-group="more">
-        <p class="mg-label"><span class="t" lang="en">Finished work</span><span class="t" lang="ar">أعمال نهائية</span></p>
         <div class="jrow">
           <figure class="m" style="--ar:0.7069"><a class="fr" href="img/work-cola.webp" data-media="image" data-en="Matrix Cola · poster" data-ar="ماتريكس كولا · ملصق"><img src="img/work-cola.webp" alt="" loading="lazy" width="1100" height="1556"></a>
               <figcaption><span class="ti">Matrix Cola</span><span class="sub"><span class="t" lang="en">Poster</span><span class="t" lang="ar">ملصق</span></span></figcaption></figure>
-          <figure class="m" style="--ar:0.5625"><a class="fr" href="img/cgi-frame-2.webp" data-media="image" data-en="Stars Design · CGI ad, logo on a tower" data-ar="ستارز ديزاين · إعلان CGI، الشعار على برج"><img src="img/cgi-frame-2.webp" alt="" loading="lazy" width="900" height="1600"></a>
-              <figcaption><span class="ti"><span class="t" lang="en">Logo on the skyline</span><span class="t" lang="ar">الشعار على الأفق</span></span><span class="sub"><span class="t" lang="en">Stars Design · CGI ad</span><span class="t" lang="ar">ستارز ديزاين · إعلان CGI</span></span></figcaption></figure>
-          <figure class="m" style="--ar:1.7778"><a class="fr" href="img/donuts-render.webp" data-media="image" data-en="Donuts · Blender render" data-ar="دونات · رندر على Blender"><img src="img/donuts-render.webp" alt="" loading="lazy" width="1600" height="900"></a>
-              <figcaption><span class="ti"><span class="t" lang="en">Donuts</span><span class="t" lang="ar">دونات</span></span><span class="sub"><span class="t" lang="en">Blender · modelling, shading, render</span><span class="t" lang="ar">Blender · نمذجة وخامات ورندر</span></span></figcaption></figure>
-        </div>
-        <div class="jrow">
-          <figure class="m" style="--ar:1.7778"><a class="fr" href="img/night-render.webp" data-media="image" data-en="Night Rain · 3D environment" data-ar="ليلة ماطرة · بيئة ثلاثية الأبعاد"><img src="img/night-render.webp" alt="" loading="lazy" width="1600" height="900"></a>
-              <figcaption><span class="ti"><span class="t" lang="en">Night Rain</span><span class="t" lang="ar">ليلة ماطرة</span></span><span class="sub"><span class="t" lang="en">Blender · environment</span><span class="t" lang="ar">Blender · بيئة</span></span></figcaption></figure>
           <figure class="m" style="--ar:1.4995"><a class="fr" href="img/work-dispersion.webp" data-media="image" data-en="The best chance · photo manipulation" data-ar="The best chance · معالجة صور"><img src="img/work-dispersion.webp" alt="" loading="lazy" width="1600" height="1067"></a>
               <figcaption><span class="ti">The best chance</span><span class="sub"><span class="t" lang="en">Photoshop · retouching</span><span class="t" lang="ar">فوتوشوب · ريتاتش</span></span></figcaption></figure>
           <figure class="m" style="--ar:0.5625"><a class="fr r916" href="media/v09.mp4" data-media="video" data-poster="media/v09-poster.webp" data-en="Childcare centre · Pop-up storybook" data-ar="حضانة أطفال · كتاب القصص المجسّم"><img src="media/v09-poster.webp" alt="" loading="lazy" width="720" height="1280"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="dur">0:58</span></a>
@@ -1016,14 +1116,6 @@ html.locked,html.locked body{overflow:hidden}
           <figure class="m" style="--ar:0.4653"><a class="fr" href="img/gym-home.webp" data-media="image" data-en="Vy Health Club · website home page" data-ar="Vy Health Club · الصفحة الرئيسية للموقع"><img src="img/gym-home.webp" alt="" loading="lazy" width="1000" height="2149"></a>
               <figcaption><span class="ti">Vy Health Club</span><span class="sub"><span class="t" lang="en">Website design</span><span class="t" lang="ar">تصميم موقع</span></span></figcaption></figure>
         </div>
-      </div>
-      <div class="process rv" data-group="more-process">
-        <div class="p-note">
-          <p class="kicker"><span class="t" lang="en">From the process</span><span class="t" lang="ar">من مراحل التنفيذ</span></p>
-          <p><span class="t" lang="en">Not a finished piece: the Blender scene where I built the Stars Design logo for the “Logo on the skyline” CGI ad above.</span><span class="t" lang="ar">ليست عملًا نهائيًا: مشهد Blender الذي بنيت فيه شعار ستارز ديزاين لإعلان CGI «الشعار على الأفق» أعلاه.</span></p>
-        </div>
-        <figure class="m"><a class="fr" href="img/cgi-blender.webp" data-media="image" data-en="Process · Building the Stars Design logo in Blender" data-ar="من مراحل التنفيذ · بناء شعار ستارز ديزاين على Blender"><img src="img/cgi-blender.webp" alt="" loading="lazy" width="1400" height="736"></a>
-              <figcaption><span class="ti"><span class="t" lang="en">Building the Stars Design logo</span><span class="t" lang="ar">بناء شعار ستارز ديزاين</span></span><span class="sub"><span class="t" lang="en">Blender · work in progress</span><span class="t" lang="ar">Blender · أثناء العمل</span></span></figcaption></figure>
       </div>
     </section>
 
