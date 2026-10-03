@@ -231,6 +231,7 @@ html[lang=ar] .case .lede{letter-spacing:0;line-height:1.7}
 html[lang=ar] .gq{letter-spacing:0;line-height:1.45;font-weight:300}
 .gh.full{flex-direction:row;justify-content:space-between;align-items:baseline;gap:24px;padding-bottom:4px}
 .gh.full p{text-align:end}
+.jrow{grid-column:1/-1;display:flex;gap:var(--g)}
 .tile{grid-column:span var(--s,1);display:flex;flex-direction:column;min-width:0;cursor:pointer}
 .tile .m{position:relative;aspect-ratio:var(--ar);overflow:hidden;background:var(--tile)}
 .tile.wide .m{aspect-ratio:var(--w,auto);flex:1 1 auto;min-height:0}
@@ -360,7 +361,10 @@ html[lang=ar] .contact .mq{font-family:"Alexandria",sans-serif;font-weight:300;l
   .gh p,.gh:not(.full) p,.gh.full p{text-align:start}
   .tile{grid-column:span 1}
   .tile.wide,.tile.solo{grid-column:1/-1}
-  .tile.solo .m{aspect-ratio:calc(var(--ar) * 2)}
+  .tile.solo .m{aspect-ratio:var(--ar)}
+  .jrow{flex-wrap:wrap;row-gap:20px}
+  .jrow .tile:last-child{flex-basis:100%!important}
+  .tile.wide .m{aspect-ratio:var(--w,var(--wm,1.5))}
   .cols3{grid-template-columns:1fr}
   .cl a{flex-direction:column;gap:6px}
   .cl a small{order:-1}
@@ -661,14 +665,14 @@ const B3={id:'b3',n:'06',en:'3D in Blender',ar:'أعمال Blender',
       PR('donuts-process-1','Modelling','النمذجة',1.887),PR('donuts-process-3','Material preview','معاينة الخامات',1.887),PR('donuts-process-4','Shader nodes','عُقد الخامات',1.887)])]};
 const MORE={id:'more',n:'07',en:'More work',ar:'أعمال أخرى',
   lede:['Other pieces: posters, photo retouching and a website design.','أعمال أخرى: ملصقات، وريتاتش صور، وتصميم موقع.'],
-  groups:[G(2,P,'Posters, retouching, web','ملصقات وريتاتش وويب','Personal and practice pieces outside client work.','أعمال شخصية وتجارب خارج أعمال العملاء.',
-    [im('img/work-cola.webp',0,'Matrix Cola','Matrix Cola','Poster','ملصق',{fit:1}),im('img/gym-home.webp',0,'Vy Health Club','Vy Health Club','Website design','تصميم موقع',{pos:'50% 0'}),im('img/work-dispersion.webp',0,'The best chance','The best chance','Photoshop · retouching','فوتوشوب · ريتاتش',{s:2})])]};
+  groups:[Object.assign(G(6,P,'Posters, retouching, web','ملصقات وريتاتش وويب','Personal and practice pieces outside client work.','أعمال شخصية وتجارب خارج أعمال العملاء.',
+    [im('img/work-cola.webp',0,'Matrix Cola','Matrix Cola','Poster','ملصق',{n:.7069}),im('img/gym-home.webp',0,'Vy Health Club','Vy Health Club','Website design','تصميم موقع',{n:.4653}),im('img/work-dispersion.webp',0,'The best chance','The best chance','Photoshop · retouching','فوتوشوب · ريتاتش',{n:1.4995})]),{j:1})]};
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const bi=(en,ar)=>`<span lang="ar">${esc(ar)}</span><span lang="en">${esc(en)}</span>`;
 const tileHTML=(it,i,r)=>{
   const s=it.s||1,wide=s>1;
-  return `<figure class="tile${wide?' wide':''}${it.fit?' fit':''}" style="--ar:${r};--s:${s}${it.w?`;--w:${it.w}`:''}" data-i="${i}" data-t="${it.t}" data-full="${it.full}" tabindex="0" role="button" aria-label="${esc(it.ar)}">
+  return `<figure class="tile${wide?' wide':''}${it.fit?' fit':''}" style="--ar:${r};--s:${s}${it.w?`;--w:${it.w}`:''}${it.wm?`;--wm:${it.wm}`:''}${it.n?`;flex:${it.n} 1 0%`:''}" data-i="${i}" data-t="${it.t}" data-full="${it.full}" tabindex="0" role="button" aria-label="${esc(it.ar)}">
   <div class="m"><img class="im" src="${it.src}"${it.pos?` style="object-position:${it.pos}"`:''} alt="${esc(it.ar)}" loading="lazy" decoding="async">${it.dur?`<span class="dur">▶ ${it.dur}</span>`:''}</div>
   <figcaption><span>${bi(it.en,it.ar)}</span><span>${bi(it.ken,it.kar)}</span></figcaption></figure>`};
 const pad2=n=>String(n).padStart(2,'0');
@@ -685,7 +689,7 @@ const caseHTML=c=>{let k=0;const total=c.groups.reduce((a,g)=>a+g.items.length,0
   </div>
   <div class="groups">${c.groups.map(g=>`<div class="grid">
     <div class="gh${g.h===6?' full':''}" style="--h:${g.h}"><div class="gl">${bi(g.en,g.ar)}<i>${pad2(g.items.length)}</i></div><p>${bi(g.nen,g.nar)}</p>${g.q?`<blockquote class="gq">${bi(g.q[0],g.q[1])}</blockquote>`:''}</div>
-    ${g.items.map(it=>tileHTML(it,k++,g.r)).join('')}</div>`).join('')}</div>
+    ${g.j?`<div class="jrow">${g.items.map(it=>tileHTML(it,k++,it.n)).join('')}</div>`:g.items.map(it=>tileHTML(it,k++,g.r)).join('')}</div>`).join('')}</div>
 </section>`};
 D.getElementById('cases').innerHTML=CASES.map(caseHTML).join('');
 D.getElementById('cases3d').innerHTML=caseHTML(B3);
@@ -693,7 +697,7 @@ D.getElementById('casesMore').innerHTML=caseHTML(MORE);
 const ITEMS={};[...CASES,B3,MORE].forEach(c=>ITEMS[c.id]=c.groups.flatMap(g=>g.items));
 
 /* phone: an odd single-cell item at the end of a group takes the full row */
-D.querySelectorAll('.grid').forEach(gr=>{const t=[...gr.querySelectorAll('.tile:not(.wide)')];if(t.length%2)t[t.length-1].classList.add('solo')});
+D.querySelectorAll('.grid').forEach(gr=>{if(gr.querySelector('.jrow'))return;const t=[...gr.querySelectorAll('.tile:not(.wide)')];if(t.length%2)t[t.length-1].classList.add('solo')});
 
 /* work index */
 const wl=D.getElementById('wl'), prev=D.getElementById('wlPrev');
