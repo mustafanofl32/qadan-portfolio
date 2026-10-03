@@ -238,6 +238,8 @@ html[lang=ar] .gq{letter-spacing:0;line-height:1.45;font-weight:300}
 .tile .m video{opacity:0;transition:opacity .5s}
 .tile .m video.on{opacity:1}
 .tile .m .im{transition:transform 1.2s var(--ease)}
+.tile.fit .m{background:transparent}
+.tile.fit .m .im{object-fit:contain}
 @media (hover:hover){.tile:hover .m .im{transform:scale(1.04)}}
 .tile .dur{position:absolute;top:10px;inset-inline-end:10px;font-size:11px;line-height:1;padding:6px 8px;background:rgba(20,22,18,.62);color:#fff;font-variant-numeric:tabular-nums;z-index:2;direction:ltr}
 .tile figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:10px;font-size:13px;line-height:1.35}
@@ -588,7 +590,7 @@ const CASES=[
    G(2,R,'Reels','الريلز','From the Treasure Card offer to the World Cup and the Jubeiha branch.','من عرض بطاقة الكنز إلى كأس العالم وفرع الجبيهة.',
      [v('v13','0:35','Treasure Card','بطاقة الكنز'),v('v07','0:32','From order to first bite','من الطلب إلى أول قضمة'),v('v06','0:29','World Cup 2026','كأس العالم 2026'),v('v08','0:20','Jubeiha branch teaser','تشويقة فرع الجبيهة','Teaser','تشويقة')]),
    G(3,P,'Flyer and product posts','الفلاير ومنشورات المنتجات','The Treasure Card flyer, then the weekly product posts in the same orange system.','فلاير بطاقة الكنز، ثم منشورات المنتجات الأسبوعية بنفس النظام البرتقالي.',
-     [im('img/cheez-treasure-card.webp','img/full/cheez-treasure-card.webp','Treasure Card','بطاقة الكنز','Flyer','فلاير'),im('img/cheez-worldcup.webp','img/full/cheez-worldcup.webp','World Cup 2026','كأس العالم 2026'),im('img/cheez-crunchy.webp','img/full/cheez-crunchy.webp','Crunchy Chocolate','كرانشي تشوكلت'),
+     [im('img/cheez-treasure-card.webp','img/full/cheez-treasure-card.webp','Treasure Card','بطاقة الكنز','Flyer','فلاير',{fit:1}),im('img/cheez-worldcup.webp','img/full/cheez-worldcup.webp','World Cup 2026','كأس العالم 2026'),im('img/cheez-crunchy.webp','img/full/cheez-crunchy.webp','Crunchy Chocolate','كرانشي تشوكلت'),
       im('img/cheez-mix.webp','img/full/cheez-mix.webp','Khaliya Mix','خلية مكس'),im('img/cheez-classic.webp','img/full/cheez-classic.webp','Khaliya Classic','خلية كلاسيك'),im('img/cheez-lineup.webp','img/full/cheez-lineup.webp','The line-up','التشكيلة'),
       im('img/cheez-box.webp','img/full/cheez-box.webp','The box','البوكس'),im('img/cheez-drinks.webp','img/full/cheez-drinks.webp','Hot drinks','المشروبات الساخنة'),im('img/cheez-manakish.webp','img/full/cheez-manakish.webp','Manakish in Jubeiha','المناقيش في الجبيهة')])]},
  {id:'slazenger',n:'02',en:'Essence of Beauty × Slazenger',ar:'إسنس أوف بيوتي × سلازنجر',cen:'Reel campaign',car:'حملة ريلز',thumb:'img/slazenger/volcano-01-640.webp',
@@ -602,7 +604,7 @@ const CASES=[
    G(2,R,'Four chapters','أربعة فصول','Gym, jungle, ice and volcano: one element per reel.','النادي والغابة والجليد والبركان: عنصر لكل ريل.',
      [v('v03','0:35','01 · Gym','01 · النادي'),v('v11','0:35','02 · Jungle','02 · الغابة'),v('v10','0:23','03 · Ice','03 · الجليد'),v('v12','0:37','04 · Volcano','04 · البركان')]),
    G(1,P,'Posts','المنشورات','Each spray, from the reel to the post.','كل بخاخ، من الريل إلى المنشور.',
-     [im('img/slazenger/gym-01-640.webp','img/slazenger/gym-01.webp','Gold product ad','إعلان المنتج الذهبي'),im('img/slazenger/gym-02-640.webp','img/slazenger/gym-02.webp','Gold gym promo','إعلان النادي الذهبي'),im('img/slazenger/jungle-01-640.webp','img/slazenger/jungle-01.webp','Green athlete ad','إعلان الرياضي الأخضر'),
+     [im('img/slazenger/gym-01-640.webp','img/slazenger/gym-01.webp','Gold product ad','إعلان المنتج الذهبي'),im('img/slazenger/gym-02-640.webp','img/slazenger/gym-02.webp','Gold gym promo','إعلان النادي الذهبي'),im('img/slazenger/jungle-01-640.webp','img/slazenger/jungle-01.webp','Green athlete ad','إعلان الرياضي الأخضر','Post','منشور',{fit:1}),
       im('img/slazenger/ice-01-640.webp','img/slazenger/ice-01.webp','Blue product ad','إعلان المنتج الأزرق'),im('img/slazenger/volcano-01-640.webp','img/slazenger/volcano-01.webp','Red volcano ad','إعلان البركان الأحمر')])]},
  {id:'tia',n:'03',en:'TIA Fashion',ar:'TIA Fashion',cen:'Launch and social content',car:'الإطلاق ومحتوى السوشال',thumb:'img/thumb/tia-countdown.webp',
   meta:['Clothing store, Maxim Mall, Jabal Al-Hussein · launch and social content','متجر ملابس في مكسيم مول، جبل الحسين · الإطلاق ومحتوى السوشال ميديا'],
@@ -660,14 +662,14 @@ const B3={id:'b3',n:'06',en:'3D in Blender',ar:'أعمال Blender',
 const MORE={id:'more',n:'07',en:'More work',ar:'أعمال أخرى',
   lede:['Other pieces: posters, photo retouching and a website design.','أعمال أخرى: ملصقات، وريتاتش صور، وتصميم موقع.'],
   groups:[G(2,P,'Posters, retouching, web','ملصقات وريتاتش وويب','Personal and practice pieces outside client work.','أعمال شخصية وتجارب خارج أعمال العملاء.',
-    [im('img/work-cola.webp',0,'Matrix Cola','Matrix Cola','Poster','ملصق'),im('img/gym-home.webp',0,'Vy Health Club','Vy Health Club','Website design','تصميم موقع'),im('img/work-dispersion.webp',0,'The best chance','The best chance','Photoshop · retouching','فوتوشوب · ريتاتش',{s:2})])]};
+    [im('img/work-cola.webp',0,'Matrix Cola','Matrix Cola','Poster','ملصق',{fit:1}),im('img/gym-home.webp',0,'Vy Health Club','Vy Health Club','Website design','تصميم موقع',{pos:'50% 0'}),im('img/work-dispersion.webp',0,'The best chance','The best chance','Photoshop · retouching','فوتوشوب · ريتاتش',{s:2})])]};
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const bi=(en,ar)=>`<span lang="ar">${esc(ar)}</span><span lang="en">${esc(en)}</span>`;
 const tileHTML=(it,i,r)=>{
   const s=it.s||1,wide=s>1;
-  return `<figure class="tile${wide?' wide':''}" style="--ar:${r};--s:${s}${it.w?`;--w:${it.w}`:''}" data-i="${i}" data-t="${it.t}" data-full="${it.full}" tabindex="0" role="button" aria-label="${esc(it.ar)}">
-  <div class="m"><img class="im" src="${it.src}" alt="${esc(it.ar)}" loading="lazy" decoding="async">${it.dur?`<span class="dur">▶ ${it.dur}</span>`:''}</div>
+  return `<figure class="tile${wide?' wide':''}${it.fit?' fit':''}" style="--ar:${r};--s:${s}${it.w?`;--w:${it.w}`:''}" data-i="${i}" data-t="${it.t}" data-full="${it.full}" tabindex="0" role="button" aria-label="${esc(it.ar)}">
+  <div class="m"><img class="im" src="${it.src}"${it.pos?` style="object-position:${it.pos}"`:''} alt="${esc(it.ar)}" loading="lazy" decoding="async">${it.dur?`<span class="dur">▶ ${it.dur}</span>`:''}</div>
   <figcaption><span>${bi(it.en,it.ar)}</span><span>${bi(it.ken,it.kar)}</span></figcaption></figure>`};
 const pad2=n=>String(n).padStart(2,'0');
 const caseHTML=c=>{let k=0;const total=c.groups.reduce((a,g)=>a+g.items.length,0);
